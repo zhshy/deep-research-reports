@@ -48,7 +48,8 @@ def scan(root):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if not d.startswith(".")]
         for fn in filenames:
-            if fn.startswith("."):
+            # 隐藏文件默认跳过，只放行白名单（避免误传 .env 之类）
+            if fn.startswith(".") and fn not in (".gitignore", ".gitattributes"):
                 continue
             ap = os.path.join(dirpath, fn)
             rp = os.path.relpath(ap, root).replace(os.sep, "/")
