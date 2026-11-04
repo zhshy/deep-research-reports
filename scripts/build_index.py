@@ -49,7 +49,9 @@ def collect():
         d = os.path.join(REPORTS, day)
         if not os.path.isdir(d) or not re.match(r"^\d{4}-\d{2}-\d{2}$", day):
             continue
-        for fn in sorted(os.listdir(d)):
+        # 同一天里，摘要页排在全文之前（摘要是入口，全文是细节）
+        files = sorted(os.listdir(d), key=lambda x: (0 if "摘要" in x else 1, x))
+        for fn in files:
             if not fn.endswith(".md"):
                 continue
             title, summary = parse(os.path.join(d, fn))
