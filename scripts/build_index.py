@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""扫描 reports/ 重建 README.md 中的索引表。
+"""扫描 reports/，重建两处索引：
 
-索引区由两个标记界定，标记之外的内容不会被改动：
-    <!-- INDEX:START -->
-    ...
-    <!-- INDEX:END -->
+  1. README.md 的索引表（标记之间）
+  2. index.html 的落地页（供 GitHub Pages 访问）
 
 每篇报告的元数据来源（按优先级）：
   1. 正文里的 `<!-- summary: ... -->` 注释
   2. 回退：`**三句话**：` 一行的前 60 字
 标题取正文第一行 `# `。
+若同日存在 summary.html，则为该日的「摘要」条目补上「网页版」链接。
 """
+import html
 import os
 import re
 import sys
@@ -19,7 +19,9 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPORTS = os.path.join(ROOT, "reports")
 README = os.path.join(ROOT, "README.md")
+INDEX_HTML = os.path.join(ROOT, "index.html")
 START, END = "<!-- INDEX:START -->", "<!-- INDEX:END -->"
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def parse(path):
@@ -36,37 +38,45 @@ def parse(path):
     else:
         m2 = re.search(r"\*\*三句话\*\*：(.+)", text)
         summary = (m2.group(1)[:60] + "…") if m2 else "—"
-    summary = summary.replace("|", "／").replace("\n", " ")
-    title = title.replace("|", "／")
-    return title, summary
+    return title.replace("|", "／"), summary.replace("|", "／").replace("\n", " ")
 
 
 def collect():
-    rows = []
+    """返回 [{date,title,summary,rel,is_summary,page}]，按日期倒序、同日摘要优先。"""
+    entries = []
     if not os.path.isdir(REPORTS):
-        return rows
+        return entries
     for day in sorted(os.listdir(REPORTS), reverse=True):
         d = os.path.join(REPORTS, day)
-        if not os.path.isdir(d) or not re.match(r"^\d{4}-\d{2}-\d{2}$", day):
+        if not os.path.isdir(d) or not DATE_RE.match(day):
             continue
-        # 同一天里，摘要页排在全文之前（摘要是入口，全文是细节）
+        has_page = os.path.exists(os.path.join(d, "summary.html"))
         files = sorted(os.listdir(d), key=lambda x: (0 if "摘要" in x else 1, x))
+        first = True
         for fn in files:
             if not fn.endswith(".md"):
                 continue
             title, summary = parse(os.path.join(d, fn))
-            rel = f"reports/{day}/{fn}".replace(os.sep, "/")
-            # 链接里的中文需要百分号编码，GitHub 也接受原始字符，这里保留原始以便阅读
-            rows.append((day, title, summary, rel))
-    return rows
+            is_summary = "摘要" in fn
+            page = None
+            if has_page and is_summary:
+                page = f"reports/{day}/summary.html"
+            entries.append({
+                "date": day, "title": title, "summary": summary,
+                "rel": f"reports/{day}/{fn}", "is_summary": is_summary, "page": page,
+            })
+            first = False
+    return entries
 
 
-def main():
-    rows = collect()
+def build_readme(entries):
     body = ["| 日期 | 标题 | 核心结论 | 文件 |", "|---|---|---|---|"]
-    for day, title, summary, rel in rows:
-        body.append(f"| {day} | {title} | {summary} | [阅读]({rel}) |")
-    if not rows:
+    for e in entries:
+        links = [f"[阅读]({e['rel']})"]
+        if e["page"]:
+            links.insert(0, f"[**网页版**]({e['page']})")
+        body.append(f"| {e['date']} | {e['title']} | {e['summary']} | {' · '.join(links)} |")
+    if not entries:
         body.append("| — | 暂无报告 | — | — |")
     block = "\n".join(body)
 
@@ -75,22 +85,119 @@ def main():
     with open(README, encoding="utf-8") as f:
         text = f.read()
 
-    # 同步顶部的"最新一期"，避免索引更新后仍显示旧报告
-    if rows:
-        day, title, _summary, rel = rows[0]
-        latest = f"**最新一期**：[{day} · {title.split('：')[-1]}]({rel})"
+    if entries:
+        e = entries[0]
+        latest = f"**最新一期**：[{e['date']} · {e['title'].split('：')[-1]}]({e['page'] or e['rel']})"
         text = re.sub(r"^\*\*最新一期\*\*：.*$", latest, text, count=1, flags=re.M)
 
     if START in text and END in text:
-        head = text.split(START)[0]
-        tail = text.split(END)[1]
+        head, tail = text.split(START)[0], text.split(END)[1]
         text = f"{head}{START}\n{block}\n{END}{tail}"
     else:
         text = f"{text}\n\n{START}\n{block}\n{END}\n"
 
     with open(README, "w", encoding="utf-8") as f:
         f.write(text)
-    print(f"索引已更新：{len(rows)} 篇")
+
+
+HTML_HEAD = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度研报 · 每日 A股与创业板研究归档</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f5f6f8; color: #1f2937;
+         font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  header { background: #0f172a; color: #f8fafc; padding: 44px 0 34px; }
+  header h1 { font-size: 26px; font-weight: 600; margin: 0 0 10px; letter-spacing: .5px; }
+  header .sub { color: #94a3b8; font-size: 13px; }
+  header .sub b { color: #e2e8f0; font-weight: 500; }
+  .list { padding: 28px 0 60px; }
+  .item { display: block; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+          padding: 20px 24px; margin-bottom: 14px; text-decoration: none; color: inherit;
+          transition: border-color .15s, box-shadow .15s; }
+  .item:hover { border-color: #cbd5e1; box-shadow: 0 2px 10px rgba(15,23,42,.06); }
+  .item .row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .item .date { font-size: 12px; color: #64748b; font-variant-numeric: tabular-nums; }
+  .item .badge { font-size: 11px; padding: 1px 8px; border-radius: 20px; background: #eef2ff; color: #3730a3; }
+  .item h2 { font-size: 16px; font-weight: 600; margin: 6px 0 6px; }
+  .item h2 a { color: #0f172a; text-decoration: none; }
+  .item h2 a:hover { color: #1e3a8a; text-decoration: underline; }
+  .item p { font-size: 13px; color: #475569; margin: 0; }
+  .item .links { margin-top: 12px; font-size: 12px; color: #64748b; }
+  .item .links a { color: #3730a3; text-decoration: none; margin-right: 14px; }
+  .item .links a:hover { text-decoration: underline; }
+  footer { border-top: 1px solid #e5e7eb; background: #fff; padding: 22px 0; }
+  footer .wrap { font-size: 12px; color: #64748b; }
+  footer a { color: #3730a3; text-decoration: none; }
+  @media (max-width: 640px) { header h1 { font-size: 21px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>深度研报</h1>
+    <div class="sub">
+      每日 A股与创业板深度研究归档　·　每篇都按同一套方法论写：<b>每个数字带口径、每个判断带证伪条件、最后落成可执行的仓位规则</b>
+    </div>
+  </div>
+</header>
+
+<div class="wrap list">
+"""
+
+HTML_TAIL = """</div>
+
+<footer>
+  <div class="wrap">
+    本仓库是研究方法与写作工具的产物，<b>不构成任何投资建议</b>。　
+    <a href="https://github.com/zhshy/deep-research-reports">GitHub 仓库</a>　·　
+    <a href="https://github.com/zhshy/deep-dive-investment-report">方法论 Skill</a>　·　
+    <a href="https://github.com/zhshy/deep-research-reports/blob/main/README.md">README</a>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
+def build_index_html(entries):
+    cards = []
+    for e in entries:
+        href = e["page"] or (
+            "https://github.com/zhshy/deep-research-reports/blob/main/" + e["rel"])
+        badge = '<span class="badge">摘要</span>' if e["is_summary"] else ""
+        links = []
+        if e["page"]:
+            links.append(f'<a href="{e["page"]}">网页版</a>')
+        links.append(
+            '<a href="https://github.com/zhshy/deep-research-reports/blob/main/'
+            + e["rel"] + '">Markdown</a>')
+        cards.append(
+            f'  <div class="item">\n'
+            f'    <div class="row"><span class="date">{e["date"]}</span>{badge}</div>\n'
+            f'    <h2><a href="{href}">{html.escape(e["title"])}</a></h2>\n'
+            f'    <p>{html.escape(e["summary"])}</p>\n'
+            f'    <div class="links">{"".join(links)}</div>\n'
+            f'  </div>'
+        )
+    if not cards:
+        cards.append('  <div class="item"><h2>暂无报告</h2></div>')
+    with open(INDEX_HTML, "w", encoding="utf-8") as f:
+        f.write(HTML_HEAD + "\n".join(cards) + "\n" + HTML_TAIL)
+
+
+def main():
+    entries = collect()
+    build_readme(entries)
+    build_index_html(entries)
+    pages = sum(1 for e in entries if e["page"])
+    print(f"索引已更新：{len(entries)} 篇（其中 {pages} 篇有网页版）")
 
 
 if __name__ == "__main__":
