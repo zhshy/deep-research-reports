@@ -41,8 +41,21 @@ def parse(path):
     return title.replace("|", "／"), summary.replace("|", "／").replace("\n", " ")
 
 
+def slot_of(fn):
+    """时段标记：同一天可有多份（午间 / 收盘），用文件名里的关键字区分。"""
+    if "午间" in fn:
+        return "午间"
+    if "收盘" in fn:
+        return "收盘"
+    return ""
+
+
 def collect():
-    """返回 [{date,title,summary,rel,is_summary,page}]，按日期倒序、同日摘要优先。"""
+    """返回 [{date,slot,title,summary,rel,is_summary,page}]。
+
+    网页版配对规则：同一天、同一时段内，把 .html 挂到该时段的 md 上；
+    优先挂给文件名含「摘要」的那条，否则挂给该时段的第一条。
+    """
     entries = []
     if not os.path.isdir(REPORTS):
         return entries
@@ -50,22 +63,30 @@ def collect():
         d = os.path.join(REPORTS, day)
         if not os.path.isdir(d) or not DATE_RE.match(day):
             continue
-        has_page = os.path.exists(os.path.join(d, "summary.html"))
-        files = sorted(os.listdir(d), key=lambda x: (0 if "摘要" in x else 1, x))
-        first = True
+        # 同日内：收盘版在前、无标记次之、午间最后；同一时段内摘要优先
+        rank = {"收盘": 0, "": 1, "午间": 2}
+        files = sorted(os.listdir(d),
+                       key=lambda x: (rank.get(slot_of(x), 1), 0 if "摘要" in x else 1, x))
+        htmls = {}
+        for fn in files:
+            if fn.endswith(".html"):
+                htmls.setdefault(slot_of(fn), []).append(fn)
+        seen_slot = {}
         for fn in files:
             if not fn.endswith(".md"):
                 continue
+            slot = slot_of(fn)
             title, summary = parse(os.path.join(d, fn))
             is_summary = "摘要" in fn
             page = None
-            if has_page and is_summary:
-                page = f"reports/{day}/summary.html"
+            cands = htmls.get(slot, [])
+            if cands and (is_summary or slot not in seen_slot):
+                page = f"reports/{day}/{cands[0]}"
+            seen_slot.setdefault(slot, fn)
             entries.append({
-                "date": day, "title": title, "summary": summary,
+                "date": day, "slot": slot, "title": title, "summary": summary,
                 "rel": f"reports/{day}/{fn}", "is_summary": is_summary, "page": page,
             })
-            first = False
     return entries
 
 
@@ -75,7 +96,8 @@ def build_readme(entries):
         links = [f"[阅读]({e['rel']})"]
         if e["page"]:
             links.insert(0, f"[**网页版**]({e['page']})")
-        body.append(f"| {e['date']} | {e['title']} | {e['summary']} | {' · '.join(links)} |")
+        label = e["date"] + (f" {e['slot']}" if e["slot"] else "")
+        body.append(f"| {label} | {e['title']} | {e['summary']} | {' · '.join(links)} |")
     if not entries:
         body.append("| — | 暂无报告 | — | — |")
     block = "\n".join(body)
@@ -178,9 +200,10 @@ def build_index_html(entries):
         links.append(
             '<a href="https://github.com/zhshy/deep-research-reports/blob/main/'
             + e["rel"] + '">Markdown</a>')
+        dlabel = e["date"] + (f" · {e['slot']}" if e["slot"] else "")
         cards.append(
             f'  <div class="item">\n'
-            f'    <div class="row"><span class="date">{e["date"]}</span>{badge}</div>\n'
+            f'    <div class="row"><span class="date">{dlabel}</span>{badge}</div>\n'
             f'    <h2><a href="{href}">{html.escape(e["title"])}</a></h2>\n'
             f'    <p>{html.escape(e["summary"])}</p>\n'
             f'    <div class="links">{"".join(links)}</div>\n'
