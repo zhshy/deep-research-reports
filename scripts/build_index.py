@@ -73,6 +73,12 @@ def main():
     with open(README, encoding="utf-8") as f:
         text = f.read()
 
+    # 同步顶部的"最新一期"，避免索引更新后仍显示旧报告
+    if rows:
+        day, title, _summary, rel = rows[0]
+        latest = f"**最新一期**：[{day} · {title.split('：')[-1]}]({rel})"
+        text = re.sub(r"^\*\*最新一期\*\*：.*$", latest, text, count=1, flags=re.M)
+
     if START in text and END in text:
         head = text.split(START)[0]
         tail = text.split(END)[1]
