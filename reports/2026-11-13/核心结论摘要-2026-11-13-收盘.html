@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>核心结论摘要 · 2026-11-13 收盘版</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 0 60px; background: #f5f6f8; color: #1f2937;
+         font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.75; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  header { background: #0f172a; color: #f8fafc; padding: 40px 0 32px; margin-bottom: 26px; }
+  header .nav { margin-bottom: 16px; display: flex; gap: 18px; flex-wrap: wrap; }
+  header .nav a { color: #93c5fd; font-size: 12.5px; text-decoration: none;
+                  border-bottom: 1px solid rgba(147,197,253,.35); }
+  header .nav a:hover { color: #bfdbfe; border-bottom-color: #bfdbfe; }
+  header h1 { font-size: 26px; font-weight: 600; margin: 0 0 12px; letter-spacing: .4px; line-height: 1.45; }
+  header .sub { color: #94a3b8; font-size: 13px; }
+  header .sub b { color: #e2e8f0; font-weight: 500; }
+  header .flag { display: inline-block; font-size: 11.5px; padding: 3px 10px; border-radius: 20px;
+                 background: #1e293b; color: #fbbf24; margin-bottom: 14px; letter-spacing: .5px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px 26px; margin-bottom: 20px;
+          border: 1px solid #e5e7eb; }
+  .card h2 { font-size: 17px; font-weight: 600; margin: 0 0 4px; color: #0f172a; }
+  .card h2 .tag { font-size: 11px; font-weight: 400; color: #64748b; margin-left: 8px; }
+  .card .lead { font-size: 13px; color: #64748b; margin: 0 0 18px; }
+  .say { background: #f8fafc; border-left: 3px solid #334155; border-radius: 0 8px 8px 0;
+         padding: 14px 18px; margin: 0 0 12px; font-size: 14px; color: #334155; }
+  .say b.n { color: #0f172a; }
+  .say .hl { background: #fef3c7; padding: 0 3px; border-radius: 3px; color: #92400e; font-weight: 600; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  .kpi { background: #f8fafc; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #94a3b8; }
+  .kpi .v { font-size: 21px; font-weight: 600; color: #0f172a; letter-spacing: -.3px; }
+  .kpi .l { font-size: 12px; color: #64748b; margin-top: 2px; line-height: 1.55; }
+  .kpi.down { border-left-color: #16a34a; } .kpi.down .v { color: #15803d; }
+  .kpi.up { border-left-color: #dc2626; } .kpi.up .v { color: #b91c1c; }
+  .kpi.neutral { border-left-color: #475569; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0 2px; }
+  th { background: #f8fafc; color: #475569; font-weight: 500; text-align: right; padding: 9px 10px;
+       border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  td { padding: 9px 10px; border-bottom: 1px solid #f1f5f9; text-align: right;
+       font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .neg { color: #15803d; } .pos { color: #b91c1c; }
+  .muted { color: #94a3b8; }
+  .note { font-size: 12px; color: #94a3b8; margin-top: 12px; line-height: 1.65; }
+  .box { background: #f8fafc; border-radius: 10px; padding: 14px 18px; font-size: 13px; color: #334155; }
+
+  /* 2×2 */
+  .quadwrap { display: grid; grid-template-columns: 34px 1fr; grid-template-rows: 1fr 30px;
+              gap: 8px; margin-top: 6px; }
+  .ylab { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; color: #64748b;
+          letter-spacing: 1px; display: flex; align-items: center; justify-content: center; }
+  .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cell { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; }
+  .cell .qh { font-size: 11.5px; color: #64748b; letter-spacing: .5px; margin-bottom: 5px; }
+  .cell .qn { font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+  .cell .qn span { font-size: 12px; font-weight: 400; color: #64748b; margin-left: 6px; }
+  .cell .qd { font-size: 12.5px; color: #475569; line-height: 1.65; }
+  .cell .qd b { color: #0f172a; }
+  .cell.rt { border-left: 3px solid #dc2626; }
+  .cell.rb { border-left: 3px solid #f59e0b; background: #fffdf5; }
+  .cell.lt { border-left: 3px solid #94a3b8; }
+  .cell.lb { border-left: 3px solid #16a34a; }
+  .xlab { grid-column: 2; text-align: center; font-size: 11px; color: #64748b; letter-spacing: 1px;
+          display: flex; align-items: center; justify-content: center; }
+  .axisnote { font-size: 11.5px; color: #b45309; background: #fffbeb; border: 1px dashed #fcd34d;
+              border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.6; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .col { background: #f8fafc; border-radius: 10px; padding: 16px 18px; }
+  .col h3 { font-size: 13.5px; margin: 0 0 10px; color: #0f172a; font-weight: 600; }
+  .col ul { margin: 0; padding-left: 18px; font-size: 12.5px; color: #475569; line-height: 1.75; }
+  .col li { margin-bottom: 4px; }
+  .col li b { color: #0f172a; }
+
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px;
+           background: #eef2ff; color: #3730a3; margin-right: 6px; }
+  .badge.g { background: #ecfdf5; color: #047857; }
+  .badge.r { background: #fef2f2; color: #b91c1c; }
+  .badge.y { background: #fffbeb; color: #b45309; }
+
+  .stock { border-top: 1px solid #f1f5f9; padding: 14px 0 4px; }
+  .stock:first-of-type { border-top: none; padding-top: 0; }
+  .stock h4 { font-size: 13.5px; margin: 0 0 4px; color: #0f172a; font-weight: 600; }
+  .stock .meta { font-size: 12px; color: #64748b; margin-bottom: 8px; }
+  .stock .wait { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 12.5px; }
+  .stock .wait div { background: #f8fafc; border-radius: 8px; padding: 9px 12px; color: #475569; }
+  .stock .wait div b { display: block; font-size: 11.5px; margin-bottom: 3px; }
+  .stock .wait .w b { color: #047857; }
+  .stock .wait .nw b { color: #b91c1c; }
+
+  footer { font-size: 12px; color: #64748b; background: #fff; border-top: 1px solid #e5e7eb;
+           padding: 20px 0; margin-top: 12px; }
+  footer b { color: #334155; }
+  @media (max-width: 820px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .two, .quad, .stock .wait { grid-template-columns: 1fr; }
+    .quadwrap { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .ylab { writing-mode: horizontal-tb; transform: none; }
+    .xlab { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a href="../../index.html">← 返回索引</a>
+      <a href="https://github.com/zhshy/deep-research-reports/blob/main/reports/2026-11-13/核心结论摘要-2026-11-13-收盘.md">Markdown 版</a>
+      <a href="https://github.com/zhshy/deep-research-reports/blob/main/reports/2026-11-13/A股与创业板深度研究-2026-11-13-收盘.md">当日全文</a>
+    </div>
+    <div class="flag">收盘版 · 全日完整数据</div>
+    <h1>上午的 87% 收盘只剩 51%——<br>故事没变，是别人也开始跌了</h1>
+    <div class="sub">
+      基准数据日 <b>2026-11-13 收盘</b>　·　上证 3,634.35（−0.59%）　沪深300 4,016.29（−0.68%）　深证成指 10,968.79（−2.05%）<br>
+      创业板指 <b>2,426.08（−3.32%）</b>　科创50 1,279.66（−2.30%）　上证50 <b>2,775.02（+0.11%，唯一上涨）</b>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ ① 核心结论 ============ -->
+  <div class="card">
+    <h2>核心结论<span class="tag">三句话 + 四个数</span></h2>
+    <p class="lead">本期的增量不是"再讲一遍市场"，是"把上午的故事按收盘价重算一遍，并说清哪几句不算了"。</p>
+
+    <div class="say">
+      <b class="n">第一句：</b>上午"三只股票解释 87% 跌幅"的故事，收盘只剩 <span class="hl">51.3%</span>。
+      三只光模块合计贡献 −1.7042pp，占创业板指 −3.32% 的 51.3%（上午 86.9%）。
+      <b>剔除这三只，指数收盘仍跌 1.62%；上午只跌 0.19%。同一个"剔除"动作，差了 8.5 倍。</b>
+      不是三只跌得少了，是别人也开始跌了。
+    </div>
+
+    <div class="say">
+      <b class="n">第二句：</b>上午的"缩量 19.82%"在午后被量能自己推翻了。
+      午后两市成交 6,762.96 亿，仅比昨日同期少 <span class="hl">4.83%</span>；全日 −14.31%。
+      <b>价格午后跌 1.85pp 而量能恢复到昨日 95.2%——这是放量下跌，不是缩量阴跌。</b>
+      上午写"买盘撤了、卖盘没撤"；收盘要补一句：午后买盘回来一点，卖盘回来得更多。
+    </div>
+
+    <div class="say">
+      <b class="n">第三句：</b>赔率升到 <span class="hl">1.47 : 1</span>，距 P0 只剩 <span class="hl">−1.08%</span>，
+      但今天 39 家跌停把加仓的附加条件打破了。
+      <b>11-11 写死的规则是"到 P0 当日跌停 ≤20 家"，今天 39 家、占比 0.698%。</b>
+      价格门槛马上到，但到的时候不能动手——这条规则今天第一次真的挡住了动作。
+    </div>
+
+    <div class="kpis">
+      <div class="kpi down">
+        <div class="v">−3.32%</div>
+        <div class="l">创业板指收 2,426.08，六指数最差。<b>上证50 +0.11% 是唯一上涨</b>：涨 3.24% 股息率的，跌 14.04% ROE 的</div>
+      </div>
+      <div class="kpi neutral">
+        <div class="v">118.6%</div>
+        <div class="l">跌幅里估值贡献占比（盈利 −18.6%）。<b>跌得越多这个数越小</b>——是分母追上来了，不是风险释放</div>
+      </div>
+      <div class="kpi up">
+        <div class="v">1.47 : 1</div>
+        <div class="l">赔率（中枢口径 / 尾部 1.46）。<b>100% 来自分母缩小</b>，中枢 3,407 一点没动</div>
+      </div>
+      <div class="kpi neutral">
+        <div class="v">+0.300</div>
+        <div class="l">八项判据加权总分，<b>连续第四日不变</b>。#6 占失分 80%，剔除后 +0.500</div>
+      </div>
+    </div>
+
+    <p class="note">
+      宽度：上涨 765 家（13.69%）/ 下跌 4,748 家 / 涨停 38 / <b>跌停 39</b>（占比 0.698%）/ −7% 以下 226 家。
+      成交 16,556.68 亿（−2,764.14 亿）。昨日涨停股今日仅 36.84% 上涨（上午 42.11%）。
+    </p>
+  </div>
+
+  <!-- ============ ② 板块冷热 2×2 ============ -->
+  <div class="card">
+    <h2>板块冷热 2×2<span class="tag">四格逐格读，空格也要写成结论</span></h2>
+    <p class="lead">横轴 = 位置（60 日涨跌幅），纵轴 = 动量 / 资金方向（当日涨跌幅）。本期分布：右上 8、右下 5、左上 1、左下 1。</p>
+
+    <div class="axisnote">
+      <b>口径降级声明（必须读）：</b>板块级 PE/PB 分位序列<b>不存在</b>（接口只支持指数级估值）；板块资金流接口<b>连续第八期返回涨幅榜</b>，无任何净流入字段；板块跌幅榜<b>不可得</b>。
+      因此横轴用「60 日涨跌幅」代理「估值分位」、纵轴用「当日涨跌幅」代理「资金方向」。
+      <b>两个替身都不是原口径</b>（跌 60% 的板块可能仍很贵；涨可以是缩量涨），<b>所有象限结论置信度降一级</b>。本期不画没有数据的格子。
+    </div>
+
+    <div class="quadwrap">
+      <div class="ylab">动量 / 资金方向 →（当日涨跌幅，代理）</div>
+      <div class="quad">
+
+        <div class="cell lt">
+          <div class="qh">左上 · 低位 + 在涨</div>
+          <div class="qn">1 只<span>上午 4 只 → 收盘 1 只</span></div>
+          <div class="qd">
+            仅剩 <b>酒店餐饮 +0.61%</b>（60 日 −0.94%，本身贴着零轴，"低位"标签勉强）。
+            上午的电视广播 +3.39%、摩托 +1.84%、商用车 +1.94% 全部掉出榜单。<br>
+            <b>结论：补涨是半天的现象。</b>补涨需要"市场整体不差"这个前提，前提在午后被打破。
+          </div>
+        </div>
+
+        <div class="cell rt">
+          <div class="qh">右上 · 高位 + 在涨</div>
+          <div class="qn">8 只<span>上午 6 只 → 收盘 8 只</span></div>
+          <div class="qd">
+            影视院线 <b>+3.50%</b>、白色家电 +2.68%、养殖业 <b>+2.35%</b>、白酒 +1.81%、城商行 +1.76%、国有大行 <b>+1.56%</b>、饲料 +1.70%、渔业 +0.58%。
+            比上午多了白酒与白电两只。<br>
+            <b>结论：「从 AI 硬件搬向防御」午后没有停止，反而加速。</b>与上证50 +0.11% 互为印证。
+          </div>
+        </div>
+
+        <div class="cell lb">
+          <div class="qh">左下 · 低位 + 在跌</div>
+          <div class="qn">1 只<span>本期唯一有真实杀伤的格子</span></div>
+          <div class="qd">
+            <b>通信设备 −6.29%</b>（5 日 +1.02%、20 日 −24.48%、<b>60 日 −41.32%</b>、年初至今 −17.97%）。
+            光模块三只均在其中，三只合计成交 556.37 亿，占全市场 3.36%。<br>
+            <b>结论：60 日 −41.32% 不是回调，是重定价。</b>本期首次用真行业数据填这一格，不再用个股代理。
+          </div>
+        </div>
+
+        <div class="cell rb">
+          <div class="qh">右下 · 高位 + 在跌</div>
+          <div class="qn">5 只<span>上午为 0 → 收盘 5 只（本期最大变化）</span></div>
+          <div class="qd">
+            数字媒体 <b>−1.46%</b>（日内 −2.06pp）、汽车服务 −1.83%、小家电 −0.62%、出版 −0.52%（日内 −1.45pp）、厨卫电器 −0.24%。<br>
+            <b>结论：上午这一格是空的，我们据此判断"单一产业链出清、不是高位补跌"——收盘它不空了，该判断部分证伪。</b>
+            但严格按上午写死的阈值（三个指定板块跌幅 &gt;2%）无一触发，所以是"部分"而非"完全"。<b>上午的证伪条件只设了强度阈值、没设方向阈值，本期已修正：由正转负计半分。</b>
+          </div>
+        </div>
+
+      </div>
+      <div class="xlab">位置 →（60 日涨跌幅，代理估值分位）</div>
+    </div>
+
+    <p class="note">
+      四格连读：资金在「从 AI 硬件撤向防御」与「从补涨题材撤出」两个方向上同时移动。前者是主动配置（防御有股息托底，会留下），后者是被动止损（会继续找下一站）。
+    </p>
+  </div>
+
+  <!-- ============ ③ 热点与冷门 ============ -->
+  <div class="card">
+    <h2>热点与冷门<span class="tag">冷门必须拆成两种：资金冷 / 估值冷</span></h2>
+    <p class="lead">三条热点线的共同点：都不需要"高增长故事"就能讲通。短剧讲流量，猪肉讲周期，银行讲股息。</p>
+
+    <table>
+      <thead>
+        <tr><th>热点线</th><th>当日</th><th>5 日</th><th>20 日</th><th>60 日</th><th>代表个股</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>影视院线（短剧）</td>
+          <td class="pos"><b>+3.50%</b></td><td class="pos">+5.72%</td><td class="pos">+13.94%</td><td class="pos">+19.12%</td>
+          <td>幸福蓝海 +20.01%，文投控股 / 横店 / 金逸 / 中国电影 / 儒意 涨停</td>
+        </tr>
+        <tr>
+          <td>养殖业（猪）</td>
+          <td class="pos">+2.35%</td><td class="pos">+2.60%</td><td class="pos">+9.83%</td><td class="pos">+11.70%</td>
+          <td>天邦食品 +10.00%，金新农 涨停；温氏 +2.24%（量比 1.86）</td>
+        </tr>
+        <tr>
+          <td>国有大型银行Ⅱ</td>
+          <td class="pos">+1.56%</td><td class="pos">+3.18%</td><td class="pos">+4.11%</td><td class="pos">+17.59%</td>
+          <td>中国银行 +1.99%；城商行 +1.76%（青岛银行 +3.65%）</td>
+        </tr>
+        <tr>
+          <td>白酒Ⅱ / 白色家电</td>
+          <td class="pos">+1.81% / +2.68%</td><td class="neg">−1.51% / +0.86%</td><td class="pos">+7.23% / +4.78%</td><td class="pos">+2.46% / +3.41%</td>
+          <td>古井贡酒 +5.86%；美的 +2.91%</td>
+        </tr>
+        <tr>
+          <td>通信设备（光模块）</td>
+          <td class="neg"><b>−6.29%</b></td><td class="pos">+1.02%</td><td class="neg">−24.48%</td><td class="neg"><b>−41.32%</b></td>
+          <td>中际旭创 −8.39%、新易盛 −8.76%、天孚通信 −10.94%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two" style="margin-top:20px">
+      <div class="col" style="background:#fff8f8">
+        <h3><span class="badge g">资金冷</span>通信设备（光模块）</h3>
+        <ul>
+          <li><b>现象：</b>当日 −6.29%、60 日 −41.32%，三只龙头成交 556.37 亿（占全市场 3.36%），<b>在缩量市里放量下跌</b>。</li>
+          <li><b>表观估值：</b>创业板指 PE 分位 16.27%（五年最低区间）、前瞻 PE 15.99 倍——按分位尺子<b>确实冷</b>。</li>
+          <li><b>但：</b>这个"冷"是<b>用一个包含光模块的 E 算出来的</b>。若该 E 在 2027 年下修，同样价格的 PE 会从 27.43 跳到 50 以上，<b>便宜当场消失</b>。</li>
+          <li><b>判定：</b>资金冷 + <b>表观</b>估值冷，<b>不是可信的估值冷</b>。条件的钥匙在判据 #6（现金流验证）。</li>
+        </ul>
+      </div>
+      <div class="col" style="background:#f8fafc">
+        <h3><span class="badge y">估值冷</span>本期识别不出</h3>
+        <ul>
+          <li><b>原因：</b>没有板块级估值分位序列。任何"某板块估值处于历史低位"的说法，<b>本期都无据</b>。本文不做这个判断。</li>
+          <li><b>"找不到"本身是结论：</b>低位板块里，一个在涨（酒店餐饮 +0.61%）、一个在暴跌（通信设备 −6.29%），<b>没有"又冷又便宜又没人要"的第三类</b>。</li>
+          <li><b>市场状态：</b>便宜的在被抛，不便宜的在被买。只有<b>「贵但能分钱」（上证50 息债差 +163.2bp）</b>与<b>「便宜但不敢信」（创业板指 −33.5bp）</b>两个选项。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ④ 龙头点评 ============ -->
+  <div class="card">
+    <h2>龙头点评<span class="tag">A / B / C 三类，各给「该等什么 / 不该等什么」</span></h2>
+    <p class="lead">分类不是感觉：A = 逻辑成立 + 现金流已验证；B = 逻辑成立 + 现金流未验证；C = 逻辑存疑或已证伪。<b>今天三只跌 8%–11%，但它们仍然是 B 类——股价不能给基本面定罪。</b></p>
+
+    <div class="stock">
+      <h4><span class="badge">B 类</span>中际旭创（300308）　权重 11.39%</h4>
+      <div class="meta">收盘 <b>466.20（−8.39%）</b>　成交 258.74 亿（<b>全市场第一</b>）　换手 4.83%　量比 1.02　振幅 12.44%　三日 −13.99%，已跌破 11-10 的 471.02（−1.02%）</div>
+      <div class="wait">
+        <div class="w"><b>该等什么</b>等四季报的「经营现金流 / 净利」。现金流验证前，任何价格都是故事价。</div>
+        <div class="nw"><b>不该等什么</b>不该等"跌到某个 PE 就买"。前瞻 PE 15.99 看着便宜，但现金流不兑现时，这个分母本身是假的。</div>
+      </div>
+    </div>
+
+    <div class="stock">
+      <h4><span class="badge">B 类</span>新易盛（300502）　权重 5.81%</h4>
+      <div class="meta">收盘 <b>187.58（−8.76%）</b>　成交 196.51 亿　换手 <b>8.03%</b>（旭创的 1.66 倍）　量比 1.01　相对 11-10 仍 +2.06%</div>
+      <div class="wait">
+        <div class="w"><b>该等什么</b>同旭创；另需等筹码稳定——换手回落至 5% 以下，而不是"量比回 1"（收盘口径下量比会自然回落）。</div>
+        <div class="nw"><b>不该等什么</b>不该把"还剩 +2.06%"当安全垫。筹码更松散的标的，在下跌中会跌得更久——今天 −8.76% 已大于旭创 −8.39%。</div>
+      </div>
+    </div>
+
+    <div class="stock">
+      <h4><span class="badge">B 类</span>天孚通信（300394）　权重 2.19%</h4>
+      <div class="meta">收盘 <b>124.99（−10.94%，跌幅最大）</b>　成交 101.12 亿　换手 7.19%　量比 1.43（全组最高）　振幅 <b>14.27%</b></div>
+      <div class="wait">
+        <div class="w"><b>该等什么</b>等「换手 &lt;5%」与「量比回 1.0」同时出现。单看量比不够。</div>
+        <div class="nw"><b>不该等什么</b>不该在振幅 14% 的日子里抄底。全天从 143.58 到 123.55，没有一段稳定形态，这种"低点"通常不是低点。</div>
+      </div>
+    </div>
+
+    <div class="stock">
+      <h4><span class="badge g">A 类</span>宁德时代（300750）　权重 14.46%</h4>
+      <div class="meta">收盘 <b>237.70（−0.96%）</b>　成交 72.44 亿　换手 0.71%　<b>量比 0.71（缩量下跌）</b>　上午还是 +0.12% 的稳定器，收盘变成贡献 −0.1388pp</div>
+      <div class="wait">
+        <div class="w"><b>该等什么</b>等毛利率与储能订单（四季报）。</div>
+        <div class="nw"><b>不该等什么</b>不该把 −0.96% 读成"补跌开始"。量比 0.71、换手 0.71%，这是<b>没人卖</b>，不是<b>开始卖</b>。</div>
+      </div>
+    </div>
+
+    <div class="stock">
+      <h4><span class="badge g">A 类</span>迈瑞医疗（+1.06%）/ 汇川技术（+0.64%）/ 温氏股份（+2.24%）/ 东方财富（+0.33%）</h4>
+      <div class="meta">四只在 −3.32% 的指数里全部上涨，合计贡献 +0.0911pp。温氏量比 <b>1.86</b>——是"资金真的在买"，不是"没人卖所以涨"</div>
+      <div class="wait">
+        <div class="w"><b>该等什么</b>等估值分位回到 30% 以下再看性价比；东财等成交额回到 1.8 万亿以上。</div>
+        <div class="nw"><b>不该等什么</b>不该把它们和光模块放进同一个"成长篮子"一起减——它们的上涨证明创业板不是"成长整体被杀"，是"某一条赛道被杀"。</div>
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:18px">
+      <b>C 类 · 本期无新增。</b>光模块三只跌 8%–11%，仍是 B 类——因为收入增速尚未环比转负、价格战尚未确认。
+      <b>降级为 C 类需要财报证据：经营现金流/净利 &lt;0.5、应收周转天数同比延长 &gt;30%、毛利率环比 &lt;−3pp、一致预期前瞻 EPS 下调 &gt;10%，四条里出现两条即"C 类确认"。</b>
+      这个阈值 11-13 午间写死，本期沿用不改——写死的规则不因为"今天跌得狠"而放松。
+    </div>
+  </div>
+
+  <!-- ============ ⑤ 短期与长期 ============ -->
+  <div class="card">
+    <h2>短期与长期方向<span class="tag">分两栏，禁止混写</span></h2>
+    <p class="lead">短期问边际（在 10.5% 上要不要再加）；长期问存量（9% 底仓该不该有）。混成一句就变成"既看好又不买"。</p>
+
+    <div class="two">
+      <div class="col" style="background:#fffdf5;border:1px solid #fde68a">
+        <h3>短期 1–4 周 · 只回答"动不动手"</h3>
+        <div style="font-size:14px;font-weight:600;color:#92400e;margin-bottom:10px">
+          结论：不动。不加，也不减。　底仓 9% + 弹性仓 1.5% = 10.5%
+        </div>
+        <ul>
+          <li><b>不加 · 四条：</b>① P0 未到（差 −1.08%）；② <b>附加条件已破</b>（跌停 39 家 &gt; 20 家）；③ 宽度崩塌（上涨占比 13.69%）；④ 判据 #6 被价格第二次投票。</li>
+          <li><b>不减 · 三条：</b>① 逻辑失效三层 9 条，触发 0 条；② 沪深300 在 μ 下方 2.80%，距 +1σ（4,935）还有 +22.88%；③ 跌停占比 0.698% &lt; 1.0%、维持担保 263.87% &gt; 220%——<b>有恐慌，无踩踏</b>。</li>
+          <li><b>若到 P0 且附加条件满足：</b>标称 2% × k_T 0.75 × k_L 0.5 × k_V 1.0 = <b>实际 0.75%</b>，弹性仓 1.5% → 2.25%。</li>
+          <li><b>本期最该记住：</b>上午的 87% 不是结论，是半天的运气。<b>规则挡住动作的那一天，才是规则有用的一天。</b></li>
+        </ul>
+      </div>
+
+      <div class="col" style="background:#f8fafc;border:1px solid #e5e7eb">
+        <h3>长期 1–3 年 · 只回答"买什么、买多少"</h3>
+        <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:10px">
+          结论：结构不变。底仓 9% 沪深300，弹性仓上限 10%（现 1.5%）
+        </div>
+        <ul>
+          <li><b>风险预算：</b>合计硬上限 22%，现 10.5%，等效单一标的 <b>11.1%</b>，σ_p <b>3.98%</b>（创业板 σ36%、沪深300 σ39%、ρ0.86）。</li>
+          <li><b>底仓选沪深300 三条：</b>① 创业板 20 日年化波动 <b>50.22%</b>，是沪深300（16.88%）的 2.97 倍；② 沪深300 的贵是假贵（缺口 +43.97pp 可靠 ROE 修复消掉），创业板真便宜但依赖 <b>14.038%</b> 的 ROE；③ 息债差 <b>+124.4bp vs −33.5bp</b>。</li>
+          <li><b>弹性仓为什么只 1.5%：</b>档位由 ERP 的 σ 位置决定（z = +0.17σ → 底仓 9%），不由"觉得便宜"决定。创业板资格挂在 P0 2,400，未到就是未到。</li>
+          <li><b>一句话：</b>「便宜」决定买不买，「波动」决定买多少，「现金流的确定性」决定敢不敢重仓。<b>光模块三只 PE 不高、增速不低，但现金流未验证——所以连"敢重仓"的门槛都没过，与价格无关。</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">
+      判据 +0.300（已实现 +0.200 / 前瞻 +0.100）；ERP 5.88%、z +0.17σ、沪深300 在 μ 下方 2.80%（μ 点位 4,129）；
+      敏感矩阵极值 1,557（−35.83%）~ 3,885（+60.14%）；矩阵右下角 2,374（+22% × 22 倍）已低于 P0——<b>"好公司不涨"的样子</b>。
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>口径与缺口（摘要级披露，完整版见全文第十章）</b><br>
+    · 估值为 11-12 官方序列 × 今日涨跌幅折算，分位数字保持 11-12 值未更新（真实分位更低）；PE 十年分位<b>未取得</b>，全部为 5 年口径。<br>
+    · 两融停在 <b>11-11（T-2）</b>：融资 22,731.28 亿、两融余额 23,022.97 亿、维持担保 263.87%、交易占比 9.01%。<b>11-12 的官方两融统计表未发布。</b><br>
+    · 10Y 国债今日收盘值<b>未取得</b>，沿用午间同口径 1.6032%（活跃券 260016 在 11-12 收 1.5870%，差 1.62bp，对 z 影响 0.014σ，不改档位）。<br>
+    · 板块级估值分位序列不存在、板块资金流接口返回涨幅榜、板块跌幅榜不可得——2×2 为<b>代理轴</b>，置信度降一级。<br>
+    · 本期公开纠错 3 处：PE/PCF 口径混用（1.106 → <b>1.1226</b>）、量比在午间/收盘口径不可比（改用换手率）、三环集团跌停幅度按主板 10% 估算（创业板应为 20%）。<br>
+    · 本页为《A股与创业板深度研究 · 2026-11-13 收盘版》的摘要，不构成投资建议。
+  </div>
+</footer>
+
+</body>
+</html>
