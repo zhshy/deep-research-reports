@@ -8,6 +8,7 @@ import base64
 import hashlib
 import json
 import os
+import subprocess
 import sys
 import urllib.error
 import urllib.request
@@ -59,6 +60,12 @@ def scan(root):
     return out
 
 
+def index_bytes(root, rel):
+    """取 Git 索引里的字节；文件未被跟踪时返回 None。"""
+    r = subprocess.run(["git", "-C", root, "show", f":{rel}"], capture_output=True)
+    return r.stdout if r.returncode == 0 else None
+
+
 def main():
     local_dir, repo, branch, tag, msg = sys.argv[1:6]
 
@@ -82,6 +89,10 @@ def main():
     for rp, ap in files.items():
         with open(ap, "rb") as f:
             data = f.read()
+        # 工作区是 CRLF、索引是 LF 时，推送 LF 版本，避免把行尾差异写进仓库
+        idx = index_bytes(local_dir, rp)
+        if idx is not None and idx != data and idx == data.replace(b"\r\n", b"\n"):
+            data = idx
         raw[rp] = data
         local[rp] = blob_sha(data)
     print(f"本地文件数: {len(local)}")
