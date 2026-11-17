@@ -65,7 +65,7 @@ Phase 7  框架重建  风险预算定仓位 / 逻辑条件 C1–Cn / 三折扣�
 
 ## 战术执行快照（`signals-*.json`）
 
-报告写到"该等什么"就停，读者仍然不知道**今天这个价位规则允不允许动手**。这个缺口由本地技能 `divergence-trade-signals` 引擎补上：输入日线 OHLCV，输出可复核的技术状态，**不产生新的战略结论**。
+报告写到"该等什么"就停，读者仍然不知道**今天这个价位规则允不允许动手**。这个缺口由 [divergence-trade-signals](https://github.com/zhshy/divergence-trade-signals) 引擎补上：输入日线 OHLCV，输出可复核的技术状态，**不产生新的战略结论**。
 
 ```
 研报（战略层）        明确"值得买、买多少"        →  strategic_authorization
