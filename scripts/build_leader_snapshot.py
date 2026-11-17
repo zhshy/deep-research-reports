@@ -81,6 +81,7 @@ def main():
             "key_levels": result["key_levels"],
             "technical_context": result["technical_context"],
             "location": result["location"],
+            "position_scope": result.get("position_scope"),
             "strategic_authorization": result["strategic_authorization"],
             "strategy_version": result["strategy_version"],
             "input_sha256": result["data"]["input_sha256"],

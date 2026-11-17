@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-17T01:45:19.507337+00:00",
+  "generated_at": "2026-11-17T01:59:45.524458+00:00",
   "as_of": "2026-11-16",
   "source_report": "reports/2026-11-16/核心结论摘要-2026-11-16-收盘.md",
   "leaders_source": "reports/2026-11-17/data/leaders/leaders.json",
@@ -91,6 +91,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "d66099c508a61e4e374d6191617f33c937387d43c6b78dfb0f7f1f11da637064",
@@ -172,6 +173,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "08686ebec2ac6143e70220187aa45b193bbe80bde601c8a0722ebe1835f18ac4",
@@ -253,6 +255,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "768b496f2f3ea4113e648446d91956553931b3c1ec2cd3135ebd55ef792110be",
@@ -334,6 +337,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "6bc9b1065cabcdcc7a4baad3d8651fa2621079b52592f8ff3b24ac1035e33c14",
@@ -414,6 +418,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "4d696c9c6bc13bb500d743a89ea883c9ad1061a68c7394343e2903f085854b05",
@@ -495,6 +500,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "2f53d0a9cc182e938a2d3134c4de52def494b147cf1375ddc278de1b50948d2f",
@@ -576,6 +582,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "5c98d72733a09766ff2be7b197ab4adbf43616b8417dc173fddb8579a55e399f",
@@ -657,6 +664,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "ded92e85ecbd80ccf409a97131b3168629570dc818e57c4519440cb58950457f",
@@ -738,6 +746,7 @@
         "levels": [],
         "tolerance_pct": 3.0
       },
+      "position_scope": "tactical",
       "strategic_authorization": "NOT_AUTHORIZED",
       "strategy_version": "0.2.0",
       "input_sha256": "b8e14fb36d89f925639a920ecbeceb5f73f23e72ab26348026f741ea528d6121",
