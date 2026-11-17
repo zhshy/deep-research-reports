@@ -13,6 +13,8 @@ import urllib.error
 import urllib.request
 
 API = "https://api.github.com"
+# 绕过系统代理：本机代理会重置 api.github.com 的 TLS 握手
+OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 TOKEN = os.environ.get("GH_TOKEN", "").strip()
 if not TOKEN:
     sys.exit("缺少 GH_TOKEN")
@@ -27,7 +29,7 @@ def call(method, path, payload=None):
     if data:
         req.add_header("Content-Type", "application/json")
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
+        with OPENER.open(req, timeout=60) as r:
             body = r.read().decode()
             return json.loads(body) if body else {}
     except urllib.error.HTTPError as e:
