@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-11-17T01:43:21.320132+00:00",
+  "engine": "divergence-signals/backtest.py",
+  "market": "cn_a_stock",
+  "cost_bps_round_trip": 8,
+  "bars_total": 3195,
+  "trades_total": 5,
+  "per_symbol": [
+    {
+      "code": "sz300124",
+      "bars": 355,
+      "trades": 1,
+      "win_rate_pct": 100.0,
+      "expectancy_r": 0.0747,
+      "total_r": 0.0747,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300274",
+      "bars": 355,
+      "trades": 1,
+      "win_rate_pct": 100.0,
+      "expectancy_r": 0.6323,
+      "total_r": 0.6323,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300308",
+      "bars": 355,
+      "trades": 0,
+      "win_rate_pct": null,
+      "expectancy_r": null,
+      "total_r": 0.0,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300394",
+      "bars": 355,
+      "trades": 0,
+      "win_rate_pct": null,
+      "expectancy_r": null,
+      "total_r": 0.0,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300408",
+      "bars": 355,
+      "trades": 0,
+      "win_rate_pct": null,
+      "expectancy_r": null,
+      "total_r": 0.0,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300498",
+      "bars": 355,
+      "trades": 0,
+      "win_rate_pct": null,
+      "expectancy_r": null,
+      "total_r": 0.0,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300502",
+      "bars": 355,
+      "trades": 2,
+      "win_rate_pct": 0.0,
+      "expectancy_r": -1.0311,
+      "total_r": -2.0622,
+      "stops": 2,
+      "max_drawdown_r": 2.0622
+    },
+    {
+      "code": "sz300750",
+      "bars": 355,
+      "trades": 0,
+      "win_rate_pct": null,
+      "expectancy_r": null,
+      "total_r": 0.0,
+      "stops": 0,
+      "max_drawdown_r": 0.0
+    },
+    {
+      "code": "sz300760",
+      "bars": 355,
+      "trades": 1,
+      "win_rate_pct": 0.0,
+      "expectancy_r": -1.0235,
+      "total_r": -1.0235,
+      "stops": 1,
+      "max_drawdown_r": 1.0235
+    }
+  ],
+  "finding": "Across 9 leaders and 3195 daily bars, the causal implementation produced 5 trades. Two hit target 1, three were stopped. Net -2.38R. This frequency and sample size cannot support any win-rate claim.",
+  "why_so_few": "A swing pivot needs right=3 bars to confirm. By the time the setup is visible, price has usually already crossed the 23.6% Fibonacci trigger during the confirmation window. Those bars are unactionable in real time, so the engine marks them ALREADY_TRIGGERED_DO_NOT_CHASE. A fresh TRIGGERED state requires a retest and re-cross inside the 20-bar setup age."
+}

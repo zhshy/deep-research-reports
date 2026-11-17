@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "strategy_version": "0.2.0",
+  "generated_at": "2026-11-17T01:43:21.266113+00:00",
+  "as_of": "2026-11-16",
+  "bars": 355,
+  "market": "cn_a_stock",
+  "allow_short": false,
+  "t_plus_one": true,
+  "assumptions": {
+    "entry": "next_bar_open",
+    "exit": "first_target_or_stop_or_time",
+    "same_bar_stop_and_target": "stop_first_conservative",
+    "cost_bps_round_trip": 8.0,
+    "hold_bars": 40,
+    "note": "In-sample event test; not evidence of future returns."
+  },
+  "metrics": {
+    "trades": 1,
+    "win_rate_pct": 0.0,
+    "expectancy_r": -1.0235,
+    "total_r": -1.0235,
+    "profit_factor": 0.0,
+    "max_drawdown_r": 1.0235,
+    "stops": 1
+  },
+  "trades": [
+    {
+      "signal_time": "2026-01-29",
+      "entry_time": "2026-01-30",
+      "exit_time": "2026-02-13",
+      "direction": "long",
+      "type": "regular_bullish",
+      "entry": 193.33,
+      "stop": 186.74,
+      "target": 194.85086,
+      "exit": 186.74,
+      "exit_reason": "stop",
+      "net_return_pct": -3.4887,
+      "r_multiple": -1.0235
+    }
+  ]
+}

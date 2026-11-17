@@ -1,0 +1,759 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-17T01:45:19.507337+00:00",
+  "as_of": "2026-11-16",
+  "source_report": "reports/2026-11-16/核心结论摘要-2026-11-16-收盘.md",
+  "leaders_source": "reports/2026-11-17/data/leaders/leaders.json",
+  "leaders_sha256": "8813792029b53bd4b2ed8a6ae0be6a45b2120c13d499ea8413877e0ca96c7e27",
+  "source_data": "Tencent public ifzq daily K-line, unadjusted; unadjusted prices may contain corporate-action gaps",
+  "authorization": {
+    "status": "NOT_AUTHORIZED",
+    "reason": "The source report classifies leaders and states what to wait for, but does not authorize per-stock tactical tranches or entry price bands."
+  },
+  "state_summary": {
+    "EXPIRED_DO_NOT_CHASE": 1,
+    "NO_SETUP": 8
+  },
+  "leaders": [
+    {
+      "code": "sz300750",
+      "name": "宁德时代",
+      "report_category": "A",
+      "sector": "动力电池",
+      "strategic_watch": "等经营现金流/净利≥0.8",
+      "as_of": "2026-11-16",
+      "last_close": 240.5,
+      "technical_state": "EXPIRED_DO_NOT_CHASE",
+      "report_action": "WAIT_DO_NOT_CHASE",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": "hidden_bearish",
+      "setup_state": "ALREADY_TRIGGERED_DO_NOT_CHASE",
+      "entry_trigger": 259.04952,
+      "initial_stop": 272.2,
+      "targets": {
+        "basis": "current_timeframe_fallback",
+        "swing_start_time": "2026-10-29",
+        "swing_end_time": "2026-11-05",
+        "target_1_38_2_pct": 254.33532,
+        "target_2_two_thirds_custom": 241.03
+      },
+      "key_levels": {
+        "confirmed_resistance": [
+          252.5,
+          257.45,
+          272.19
+        ],
+        "confirmed_support": [
+          216.51,
+          225.45,
+          238.03
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -3.27,
+          "20d": -9.93,
+          "60d": -38.95
+        },
+        "rsi14": 38.83590854,
+        "macd": {
+          "dif": -11.16364058,
+          "dea": -13.87647748,
+          "state": "above_signal",
+          "histogram": 2.7128369
+        },
+        "moving_averages": {
+          "ma5": 242.962,
+          "ma10": 248.393,
+          "ma20": 241.562,
+          "ma60": 300.72066667,
+          "ma20_slope_5d_pct": -3.53,
+          "trend": "down"
+        },
+        "nearest_confirmed_support": 238.03,
+        "nearest_confirmed_resistance": 252.5,
+        "distance_to_support_pct": 1.04,
+        "distance_to_resistance_pct": 4.99,
+        "volume_5d_to_20d": 0.62
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "d66099c508a61e4e374d6191617f33c937387d43c6b78dfb0f7f1f11da637064",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300760",
+      "name": "迈瑞医疗",
+      "report_category": "A",
+      "sector": "医疗器械",
+      "strategic_watch": "等经营现金流/净利≥0.8",
+      "as_of": "2026-11-16",
+      "last_close": 184.3,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          185.99,
+          186.95,
+          189.99
+        ],
+        "confirmed_support": [
+          157.6,
+          162.6,
+          175.5
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": 1.77,
+          "20d": 10.0,
+          "60d": 22.48
+        },
+        "rsi14": 62.02130885,
+        "macd": {
+          "dif": 3.79239487,
+          "dea": 4.34722656,
+          "state": "below_signal",
+          "histogram": -0.55483169
+        },
+        "moving_averages": {
+          "ma5": 179.384,
+          "ma10": 181.312,
+          "ma20": 178.91,
+          "ma60": 167.22683333,
+          "ma20_slope_5d_pct": 1.87,
+          "trend": "up"
+        },
+        "nearest_confirmed_support": 175.5,
+        "nearest_confirmed_resistance": 185.99,
+        "distance_to_support_pct": 5.01,
+        "distance_to_resistance_pct": 0.92,
+        "volume_5d_to_20d": 0.74
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "08686ebec2ac6143e70220187aa45b193bbe80bde601c8a0722ebe1835f18ac4",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300498",
+      "name": "温氏股份",
+      "report_category": "A",
+      "sector": "养殖",
+      "strategic_watch": "等经营现金流/净利≥0.8",
+      "as_of": "2026-11-16",
+      "last_close": 17.55,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          17.58,
+          17.73,
+          17.86
+        ],
+        "confirmed_support": [
+          17.3,
+          17.38,
+          17.52
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": 3.42,
+          "20d": 16.07,
+          "60d": 30.29
+        },
+        "rsi14": 73.64233661,
+        "macd": {
+          "dif": 0.55304905,
+          "dea": 0.46909744,
+          "state": "above_signal",
+          "histogram": 0.08395161
+        },
+        "moving_averages": {
+          "ma5": 17.046,
+          "ma10": 16.885,
+          "ma20": 16.3195,
+          "ma60": 15.19316667,
+          "ma20_slope_5d_pct": 3.17,
+          "trend": "up"
+        },
+        "nearest_confirmed_support": 17.52,
+        "nearest_confirmed_resistance": 17.58,
+        "distance_to_support_pct": 0.17,
+        "distance_to_resistance_pct": 0.17,
+        "volume_5d_to_20d": 0.97
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "768b496f2f3ea4113e648446d91956553931b3c1ec2cd3135ebd55ef792110be",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300308",
+      "name": "中际旭创",
+      "report_category": "B",
+      "sector": "光模块",
+      "strategic_watch": "等PE/PCF缺口收敛至<1.00",
+      "as_of": "2026-11-16",
+      "last_close": 408.97,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          443.99,
+          448.0,
+          457.01
+        ],
+        "confirmed_support": [
+          337.0,
+          344.0,
+          389.21
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -9.53,
+          "20d": -38.1,
+          "60d": -56.63
+        },
+        "rsi14": 31.25754867,
+        "macd": {
+          "dif": -75.8620821,
+          "dea": -76.78880308,
+          "state": "above_signal",
+          "histogram": 0.92672098
+        },
+        "moving_averages": {
+          "ma5": 479.414,
+          "ma10": 480.401,
+          "ma20": 539.7135,
+          "ma60": 746.55483333,
+          "ma20_slope_5d_pct": -8.62,
+          "trend": "down"
+        },
+        "nearest_confirmed_support": 389.21,
+        "nearest_confirmed_resistance": 443.99,
+        "distance_to_support_pct": 5.08,
+        "distance_to_resistance_pct": 8.56,
+        "volume_5d_to_20d": 1.23
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "6bc9b1065cabcdcc7a4baad3d8651fa2621079b52592f8ff3b24ac1035e33c14",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300502",
+      "name": "新易盛",
+      "report_category": "B",
+      "sector": "光模块",
+      "strategic_watch": "等PE/PCF缺口收敛至<1.00",
+      "as_of": "2026-11-16",
+      "last_close": 166.8,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          191.0,
+          200.88,
+          343.28
+        ],
+        "confirmed_support": [
+          97.13,
+          161.16
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -5.23,
+          "20d": -45.84,
+          "60d": -62.77
+        },
+        "rsi14": 30.35313342,
+        "macd": {
+          "dif": -42.0996429,
+          "dea": -45.90642211,
+          "state": "above_signal",
+          "histogram": 3.80677921
+        },
+        "moving_averages": {
+          "ma5": 191.752,
+          "ma10": 186.233,
+          "ma20": 216.779,
+          "ma60": 339.283,
+          "ma20_slope_5d_pct": -12.94,
+          "trend": "down"
+        },
+        "nearest_confirmed_support": 161.16,
+        "nearest_confirmed_resistance": 191.0,
+        "distance_to_support_pct": 3.5,
+        "distance_to_resistance_pct": 14.51,
+        "volume_5d_to_20d": 1.25
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "4d696c9c6bc13bb500d743a89ea883c9ad1061a68c7394343e2903f085854b05",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300394",
+      "name": "天孚通信",
+      "report_category": "B",
+      "sector": "光器件",
+      "strategic_watch": "等PE/PCF缺口收敛至<1.00",
+      "as_of": "2026-11-16",
+      "last_close": 110.2,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          112.66,
+          118.0,
+          163.28
+        ],
+        "confirmed_support": [
+          71.5,
+          85.6,
+          98.25
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -10.28,
+          "20d": -45.79,
+          "60d": -58.84
+        },
+        "rsi14": 29.14444684,
+        "macd": {
+          "dif": -27.93258859,
+          "dea": -27.60879873,
+          "state": "below_signal",
+          "histogram": -0.32378986
+        },
+        "moving_averages": {
+          "ma5": 129.2,
+          "ma10": 127.993,
+          "ma20": 156.782,
+          "ma60": 223.80783333,
+          "ma20_slope_5d_pct": -13.01,
+          "trend": "down"
+        },
+        "nearest_confirmed_support": 98.25,
+        "nearest_confirmed_resistance": 112.66,
+        "distance_to_support_pct": 12.16,
+        "distance_to_resistance_pct": 2.23,
+        "volume_5d_to_20d": 1.26
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "2f53d0a9cc182e938a2d3134c4de52def494b147cf1375ddc278de1b50948d2f",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300408",
+      "name": "三环集团",
+      "report_category": "B",
+      "sector": "电子陶瓷",
+      "strategic_watch": "等PE/PCF缺口收敛至<1.00",
+      "as_of": "2026-11-16",
+      "last_close": 64.39,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          68.86,
+          70.5,
+          118.11
+        ],
+        "confirmed_support": [
+          53.16,
+          54.51,
+          63.18
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -13.94,
+          "20d": -31.8,
+          "60d": -50.12
+        },
+        "rsi14": 30.36083389,
+        "macd": {
+          "dif": -8.78788871,
+          "dea": -8.90379563,
+          "state": "above_signal",
+          "histogram": 0.11590692
+        },
+        "moving_averages": {
+          "ma5": 74.022,
+          "ma10": 74.25,
+          "ma20": 80.366,
+          "ma60": 103.6225,
+          "ma20_slope_5d_pct": -6.99,
+          "trend": "down"
+        },
+        "nearest_confirmed_support": 63.18,
+        "nearest_confirmed_resistance": 68.86,
+        "distance_to_support_pct": 1.92,
+        "distance_to_resistance_pct": 6.94,
+        "volume_5d_to_20d": 0.97
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "5c98d72733a09766ff2be7b197ab4adbf43616b8417dc173fddb8579a55e399f",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300274",
+      "name": "阳光电源",
+      "report_category": "C",
+      "sector": "光伏逆变器",
+      "strategic_watch": "等订单/毛利拐点",
+      "as_of": "2026-11-16",
+      "last_close": 75.81,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          76.65,
+          78.09,
+          83.8
+        ],
+        "confirmed_support": [
+          71.55,
+          72.13,
+          75.12
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -2.62,
+          "20d": -2.41,
+          "60d": -35.05
+        },
+        "rsi14": 45.93463768,
+        "macd": {
+          "dif": -0.70557424,
+          "dea": -1.60963265,
+          "state": "above_signal",
+          "histogram": 0.90405841
+        },
+        "moving_averages": {
+          "ma5": 78.25,
+          "ma10": 79.31,
+          "ma20": 74.7445,
+          "ma60": 85.457,
+          "ma20_slope_5d_pct": 0.18,
+          "trend": "mixed"
+        },
+        "nearest_confirmed_support": 75.12,
+        "nearest_confirmed_resistance": 76.65,
+        "distance_to_support_pct": 0.92,
+        "distance_to_resistance_pct": 1.11,
+        "volume_5d_to_20d": 0.81
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "ded92e85ecbd80ccf409a97131b3168629570dc818e57c4519440cb58950457f",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    },
+    {
+      "code": "sz300124",
+      "name": "汇川技术",
+      "report_category": "C",
+      "sector": "工控",
+      "strategic_watch": "等订单/毛利拐点",
+      "as_of": "2026-11-16",
+      "last_close": 52.96,
+      "technical_state": "NO_SETUP",
+      "report_action": "WAIT",
+      "market_profile": {
+        "label": "A-share stock",
+        "allow_short": false,
+        "settlement": "T+1",
+        "lot_size": 100,
+        "intraday_round_trip": false,
+        "price_limit_pct": 20.0,
+        "market": "cn_a_stock"
+      },
+      "setup_type": null,
+      "setup_state": null,
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": null,
+      "key_levels": {
+        "confirmed_resistance": [
+          54.4,
+          57.82,
+          58.83
+        ],
+        "confirmed_support": [
+          48.85,
+          48.97,
+          49.95
+        ],
+        "basis": "classified_against_last_close"
+      },
+      "technical_context": {
+        "returns_pct": {
+          "5d": -7.98,
+          "20d": 4.27,
+          "60d": -13.46
+        },
+        "rsi14": 44.29332212,
+        "macd": {
+          "dif": 0.20808034,
+          "dea": 0.48842098,
+          "state": "below_signal",
+          "histogram": -0.28034064
+        },
+        "moving_averages": {
+          "ma5": 54.094,
+          "ma10": 55.686,
+          "ma20": 54.651,
+          "ma60": 55.21516667,
+          "ma20_slope_5d_pct": 1.9,
+          "trend": "mixed"
+        },
+        "nearest_confirmed_support": 49.95,
+        "nearest_confirmed_resistance": 54.4,
+        "distance_to_support_pct": 6.03,
+        "distance_to_resistance_pct": 2.72,
+        "volume_5d_to_20d": 0.81
+      },
+      "location": {
+        "status": "UNCHECKED",
+        "confirmed": false,
+        "levels": [],
+        "tolerance_pct": 3.0
+      },
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "strategy_version": "0.2.0",
+      "input_sha256": "b8e14fb36d89f925639a920ecbeceb5f73f23e72ab26348026f741ea528d6121",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ]
+    }
+  ],
+  "limitations": [
+    "Technical state does not create strategic authorization.",
+    "A-share stocks are T+1 and cannot be shorted without securities lending.",
+    "No higher-timeframe CSV was supplied; targets use the current-timeframe fallback.",
+    "A no-setup result is not a forecast that price will not move."
+  ]
+}

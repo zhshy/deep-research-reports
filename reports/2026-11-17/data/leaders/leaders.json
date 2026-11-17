@@ -1,0 +1,70 @@
+{
+  "note": "研报龙头股名单。此处只维护名单与战略观察条件，技术判定一律由 divergence-trade-signals 引擎计算，避免双份维护。",
+  "source_report": "reports/2026-11-16/核心结论摘要-2026-11-16-收盘.md",
+  "as_of": "2026-11-16",
+  "leaders": [
+    {
+      "code": "sz300750",
+      "name": "宁德时代",
+      "category": "A",
+      "sector": "动力电池",
+      "watch": "等经营现金流/净利≥0.8"
+    },
+    {
+      "code": "sz300760",
+      "name": "迈瑞医疗",
+      "category": "A",
+      "sector": "医疗器械",
+      "watch": "等经营现金流/净利≥0.8"
+    },
+    {
+      "code": "sz300498",
+      "name": "温氏股份",
+      "category": "A",
+      "sector": "养殖",
+      "watch": "等经营现金流/净利≥0.8"
+    },
+    {
+      "code": "sz300308",
+      "name": "中际旭创",
+      "category": "B",
+      "sector": "光模块",
+      "watch": "等PE/PCF缺口收敛至<1.00"
+    },
+    {
+      "code": "sz300502",
+      "name": "新易盛",
+      "category": "B",
+      "sector": "光模块",
+      "watch": "等PE/PCF缺口收敛至<1.00"
+    },
+    {
+      "code": "sz300394",
+      "name": "天孚通信",
+      "category": "B",
+      "sector": "光器件",
+      "watch": "等PE/PCF缺口收敛至<1.00"
+    },
+    {
+      "code": "sz300408",
+      "name": "三环集团",
+      "category": "B",
+      "sector": "电子陶瓷",
+      "watch": "等PE/PCF缺口收敛至<1.00"
+    },
+    {
+      "code": "sz300274",
+      "name": "阳光电源",
+      "category": "C",
+      "sector": "光伏逆变器",
+      "watch": "等订单/毛利拐点"
+    },
+    {
+      "code": "sz300124",
+      "name": "汇川技术",
+      "category": "C",
+      "sector": "工控",
+      "watch": "等订单/毛利拐点"
+    }
+  ]
+}

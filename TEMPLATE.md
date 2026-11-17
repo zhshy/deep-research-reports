@@ -128,6 +128,40 @@ python3 scripts/calc.py position --incr {} --kt {} --kl {} --kv {}
 
 逻辑条件 C1–C5（可观测阈值 + 当前状态）→ 六档结构 → 价格档（只作资格）→ 三折扣 → 失效三层（S/R/X）。
 
+### 9.5 战术执行交接（条件项：仅在给出具体买卖时点时填写）
+
+> 战略层说"值不值得买、买多少"，战术层只说"现在这个价位、这个 K 线状态，规则允不允许下手"。两层不许互相代答。
+
+**交接四要素**
+
+| 要素 | 取值 | 说明 |
+|---|---|---|
+| 战略授权 | `{NO_AUTH / AUTH_WAIT / AUTH_TRIGGERED / CONFLICT_WAIT / EXPIRED}` | 由本报告的仓位结论给出，不由技术面反推 |
+| 战术额度 | {占总资产 %} | 已含在第九章六档结构内，不额外加总 |
+| 信号标的 / 执行标的 | {} / {} | 二者不同时必须写明（如用 ETF 执行个股信号） |
+| 数据时点与 K 线状态 | {YYYY-MM-DD} 收盘 / `closed` | 午间版一律 `forming`，不得触发 |
+
+**技术状态归档**
+
+```bash
+python3 ~/.workbuddy/skills/divergence-trade-signals/scripts/divergence_signals.py \
+  reports/{日期}/data/{code}.csv \
+  --market cn_a_stock --symbol {code} \
+  --timeframe day --bar-status closed \
+  --position-scope tactical --no-strategic-authorization \
+  --tick-size 0.01 --format json > reports/{日期}/signals-{code}.json
+```
+
+| 代码 | 名称 | 技术状态 | 规则动作 | 触发价 | 初始止损 | 目标1(38.2%) | 阻塞原因 |
+|---|---|---|---:|---:|---:|---|
+| | | `TRIGGERED_* / WAIT_TRIGGER_* / EXPIRED_DO_NOT_CHASE / NO_SETUP` | | | | | `execution_blockers` |
+
+**三条硬约束**
+
+1. A 股 T+1、不可裸空。空头背离只能输出"不加仓 / 减仓 / 退出"，不得出现裸空指令。
+2. 核心仓不用技术止损，只按第十章 S/R/X 逻辑失效退出；技术止损仅作用于战术仓。
+3. `NO_SETUP` 只表示规则沉默，不表示看多或看空，不得当成买入理由。
+
 ## 第十章 事实与判断的边界
 
 - **设计判断**（未校准）：{列表}
@@ -147,11 +181,14 @@ python3 scripts/calc.py position --incr {} --kt {} --kl {} --kv {}
 # 全部派生数字的复算命令
 ```
 
-## 附录 C · 自检结果（67 项）
+## 附录 C · 自检结果（75 项）
 
 | 段落 | 项数 | 通过 | 说明 |
 |---|---:|---:|---|
-| **合计** | **67** | | |
+| A–I 通用 | 63 | | |
+| J 板块维度（条件项） | 4 | | 仅当含板块分析 |
+| K 战术交接（条件项） | 8 | | 仅当给出具体买卖时点 |
+| **合计** | **75** | | |
 
 ---
 

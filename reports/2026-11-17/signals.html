@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>龙头股技术执行快照 · 2026-11-17</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 0 60px; background: #f5f6f8; color: #1f2937;
+         font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.75; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  header { background: #0f172a; color: #f8fafc; padding: 40px 0 32px; margin-bottom: 26px; }
+  header .nav { margin-bottom: 16px; display: flex; gap: 18px; flex-wrap: wrap; }
+  header .nav a { color: #93c5fd; font-size: 12.5px; text-decoration: none;
+                  border-bottom: 1px solid rgba(147,197,253,.35); }
+  header .nav a:hover { color: #bfdbfe; border-bottom-color: #bfdbfe; }
+  header h1 { font-size: 26px; font-weight: 600; margin: 0 0 12px; letter-spacing: .4px; line-height: 1.45; }
+  header .sub { color: #94a3b8; font-size: 13px; }
+  header .sub b { color: #e2e8f0; font-weight: 500; }
+  header .flag { display: inline-block; font-size: 11.5px; padding: 3px 10px; border-radius: 20px;
+                 background: #1e293b; color: #fbbf24; margin-bottom: 14px; letter-spacing: .5px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px 26px; margin-bottom: 20px;
+          border: 1px solid #e5e7eb; }
+  .card h2 { font-size: 17px; font-weight: 600; margin: 0 0 4px; color: #0f172a; }
+  .card h2 .tag { font-size: 11px; font-weight: 400; color: #64748b; margin-left: 8px; }
+  .card .lead { font-size: 13px; color: #64748b; margin: 0 0 18px; }
+  .say { background: #f8fafc; border-left: 3px solid #334155; border-radius: 0 8px 8px 0;
+         padding: 14px 18px; margin: 0 0 12px; font-size: 14px; color: #334155; }
+  .say .hl { background: #fef3c7; padding: 0 3px; border-radius: 3px; color: #92400e; font-weight: 600; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  .kpi { background: #f8fafc; border-radius: 10px; padding: 14px 16px; border-left: 3px solid #94a3b8; }
+  .kpi .v { font-size: 21px; font-weight: 600; color: #0f172a; letter-spacing: -.3px; }
+  .kpi .l { font-size: 12px; color: #64748b; margin-top: 2px; line-height: 1.55; }
+  .kpi.down { border-left-color: #16a34a; } .kpi.down .v { color: #15803d; }
+  .kpi.up { border-left-color: #dc2626; } .kpi.up .v { color: #b91c1c; }
+  .kpi.neutral { border-left-color: #475569; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0 2px; }
+  th { background: #f8fafc; color: #475569; font-weight: 500; text-align: right; padding: 9px 10px;
+       border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  td { padding: 9px 10px; border-bottom: 1px solid #f1f5f9; text-align: right;
+       font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .neg { color: #15803d; } .pos { color: #b91c1c; }
+  .muted { color: #94a3b8; }
+  .note { font-size: 12px; color: #94a3b8; margin-top: 12px; line-height: 1.65; }
+  .box { background: #f8fafc; border-radius: 10px; padding: 14px 18px; font-size: 13px; color: #334155; }
+  .box b { color: #0f172a; }
+  code { background: #f1f5f9; border-radius: 4px; padding: 1px 5px; font-size: 12px;
+         font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #334155; }
+  pre { background: #0f172a; color: #e2e8f0; border-radius: 10px; padding: 16px 18px; overflow-x: auto;
+        font-size: 12px; line-height: 1.7; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .pill { display: inline-block; font-size: 11px; padding: 1px 8px; border-radius: 20px;
+          background: #eef2ff; color: #3730a3; font-weight: 500; white-space: nowrap; }
+  .pill.dead { background: #fef2f2; color: #991b1b; }
+  .pill.silent { background: #f1f5f9; color: #475569; }
+  footer { font-size: 12px; color: #94a3b8; padding: 10px 0 0; line-height: 1.8; }
+  @media (max-width: 720px) {
+    .kpis { grid-template-columns: 1fr 1fr; }
+    header h1 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a href="../../index.html">返回索引</a>
+      <a href="龙头股技术执行快照-2026-11-17.md">Markdown 版</a>
+      <a href="../2026-11-16/核心结论摘要-2026-11-16-收盘.html">上游研报（11-16 收盘）</a>
+      <a href="signals-leaders-close.json">信号 JSON</a>
+    </div>
+    <h1>龙头股技术执行快照 · 2026-11-17：九只龙头，零个可执行</h1>
+    <div class="flag">数据基准 2026-11-16 收盘 · bar_status = closed</div>
+    <div class="sub">
+      把研报里的 A/B/C 三类龙头，从"该等什么"翻译成"今天规则允不允许动手"。<br>
+      引擎 <b>divergence-trade-signals v0.2.0</b> · 数据 <b>腾讯公开日线（不复权）</b> · 每只 355 根，2025-06-03 至 2026-11-16
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>三句话结论</h2>
+    <p class="lead">不铺垫，先说能不能动手。</p>
+
+    <div class="say">
+      <b>第一句：九只龙头，零个可执行买点。</b>
+      宁德时代是唯一有完整结构的（隐藏空头，触发价 259.05、止损 272.20），但现价 240.50 已在触发价之下
+      <span class="hl">7.2%</span>，属 <code>EXPIRED_DO_NOT_CHASE</code>；其余八只 <code>NO_SETUP</code>——规则根本没开口。
+    </div>
+
+    <div class="say">
+      <b>第二句：B 类四只是"放量下跌 + RSI 贴 30 + MA20 陡降"，最不该抢反弹。</b>
+      20 日跌幅 −31.80% 至 −45.84%，RSI14 落在 29.1–31.3，MA20 五日斜率 −6.99% 至 −13.01%。
+      量能上三只（中际旭创 1.23 / 新易盛 1.25 / 天孚 1.26）放量下跌，三环 0.97 略低但斜率与 RSI 同样指向下跌未止。
+      三条同时成立，意味着卖压仍在主动释放，而不是缩量筑底。
+    </div>
+
+    <div class="say">
+      <b>第三句：A 类三只是"缩量上涨"，与 B 类互为镜像。</b>
+      迈瑞 +10.00%、温氏 +16.07%（20 日），量比 0.74 / 0.97；宁德 −9.93% 但量比仅 0.62——跌得没人接，也涨得没人追。
+      这正是研报"把未来的现金流换成当下的现金流"在量价上的指纹。
+    </div>
+
+    <div class="kpis">
+      <div class="kpi neutral"><div class="v">0 / 9</div><div class="l">可执行买点<br>TRIGGERED 数量</div></div>
+      <div class="kpi down"><div class="v">8</div><div class="l">规则沉默<br>NO_SETUP</div></div>
+      <div class="kpi down"><div class="v">1</div><div class="l">结构过期<br>EXPIRED_DO_NOT_CHASE</div></div>
+      <div class="kpi neutral"><div class="v">NO_AUTH</div><div class="l">战略授权状态<br>战术额度 0%</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>九只龙头技术状态 <span class="tag">价格与指标均为 2026-11-16 收盘</span></h2>
+    <p class="lead">涨跌按 A 股习惯着色：<span class="pos">红涨</span> / <span class="neg">绿跌</span>。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>标的</th><th>类</th><th>收盘</th><th>5日</th><th>20日</th><th>60日</th>
+          <th>RSI14</th><th>MA20斜率</th><th>量比5/20</th><th>技术状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>宁德时代</td><td>A</td><td>240.50</td><td class="neg">−3.27%</td><td class="neg">−9.93%</td><td class="neg">−38.95%</td><td>38.8</td><td class="neg">−3.53%</td><td>0.62</td><td><span class="pill dead">EXPIRED</span></td></tr>
+        <tr><td>迈瑞医疗</td><td>A</td><td>184.30</td><td class="pos">+1.77%</td><td class="pos">+10.00%</td><td class="pos">+22.48%</td><td>62.0</td><td class="pos">+1.87%</td><td>0.74</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>温氏股份</td><td>A</td><td>17.55</td><td class="pos">+3.42%</td><td class="pos">+16.07%</td><td class="pos">+30.29%</td><td>73.6</td><td class="pos">+3.17%</td><td>0.97</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>中际旭创</td><td>B</td><td>408.97</td><td class="neg">−9.53%</td><td class="neg">−38.10%</td><td class="neg">−56.63%</td><td>31.3</td><td class="neg">−8.62%</td><td>1.23</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>新易盛</td><td>B</td><td>166.80</td><td class="neg">−5.23%</td><td class="neg">−45.84%</td><td class="neg">−62.77%</td><td>30.4</td><td class="neg">−12.94%</td><td>1.25</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>天孚通信</td><td>B</td><td>110.20</td><td class="neg">−10.28%</td><td class="neg">−45.79%</td><td class="neg">−58.84%</td><td>29.1</td><td class="neg">−13.01%</td><td>1.26</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>三环集团</td><td>B</td><td>64.39</td><td class="neg">−13.94%</td><td class="neg">−31.80%</td><td class="neg">−50.12%</td><td>30.4</td><td class="neg">−6.99%</td><td>0.97</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>阳光电源</td><td>C</td><td>75.81</td><td class="neg">−2.62%</td><td class="neg">−2.41%</td><td class="neg">−35.05%</td><td>45.9</td><td class="pos">+0.18%</td><td>0.81</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+        <tr><td>汇川技术</td><td>C</td><td>52.96</td><td class="neg">−7.98%</td><td class="pos">+4.27%</td><td class="neg">−13.46%</td><td>44.3</td><td class="pos">+1.90%</td><td>0.81</td><td><span class="pill silent">NO_SETUP</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      规则动作全部为 <code>WAIT</code>，宁德时代为 <code>WAIT_DO_NOT_CHASE</code>。
+      <b><code>NO_SETUP</code> 不是看多、也不是看空，是规则沉默</b>——把它读成"跌不动了可以埋伏"是本页最想拦住的一次误读。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>位置：四只 B 类都卡在"支撑之上、阻力之下"</h2>
+    <p class="lead">支撑/阻力只统计相对现价正确一侧的已确认摆动点。已被跌破的摆动低点记为阻力，不再记为支撑。</p>
+    <table>
+      <thead><tr><th>标的</th><th>最近确认支撑</th><th>距离</th><th>最近确认阻力</th><th>距离</th><th>结构判定</th></tr></thead>
+      <tbody>
+        <tr><td>宁德时代</td><td>238.03</td><td class="neg">−1.04%</td><td>252.50</td><td class="pos">+4.99%</td><td>紧贴支撑，但结构已过期</td></tr>
+        <tr><td>迈瑞医疗</td><td>175.50</td><td class="neg">−5.01%</td><td>185.99</td><td class="pos">+0.92%</td><td>顶着阻力，未破</td></tr>
+        <tr><td>温氏股份</td><td>17.52</td><td class="neg">−0.17%</td><td>17.58</td><td class="pos">+0.17%</td><td><b>0.34% 极窄箱体</b></td></tr>
+        <tr><td>中际旭创</td><td>389.21</td><td class="neg">−5.08%</td><td>443.99</td><td class="pos">+8.56%</td><td>下跌中继箱体</td></tr>
+        <tr><td>新易盛</td><td>161.16</td><td class="neg">−3.50%</td><td>191.00</td><td class="pos">+14.51%</td><td>下跌中继箱体</td></tr>
+        <tr><td>天孚通信</td><td>98.25</td><td class="neg">−12.16%</td><td>112.66</td><td class="pos">+2.23%</td><td>阻力近、支撑远，最弱</td></tr>
+        <tr><td>三环集团</td><td>63.18</td><td class="neg">−1.92%</td><td>68.86</td><td class="pos">+6.94%</td><td>紧贴支撑，无结构</td></tr>
+        <tr><td>阳光电源</td><td>75.12</td><td class="neg">−0.92%</td><td>76.65</td><td class="pos">+1.11%</td><td>2% 箱体，方向未定</td></tr>
+        <tr><td>汇川技术</td><td>49.95</td><td class="neg">−6.03%</td><td>54.40</td><td class="pos">+2.72%</td><td>反弹受阻回落</td></tr>
+      </tbody>
+    </table>
+    <div class="box" style="margin-top:16px">
+      <b>这张表解释了一个反直觉的事：</b>跌得最狠的四只（B 类）并不是"离支撑最远"——中际旭创只差 5.08%、新易盛 3.50%、三环 1.92%。
+      <b>它们离支撑很近，但离"结构"很远。</b>支撑是价格记忆，结构是买卖双方换手完成后留下的抬高低点。前者靠眼睛看，后者要等右侧确认。
+      <br><br><b>天孚通信是本组最弱的一只</b>：阻力仅 +2.23%，支撑却在 −12.16%，上方空间被压死、下方是真空。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>唯一有结构的宁德时代，为什么也不能做</h2>
+    <p class="lead">隐藏空头（hidden bearish）：价格低点抬高，DIF 反而走低。</p>
+    <table>
+      <thead><tr><th>项目</th><th>数值</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td>结构类型</td><td><code>hidden_bearish</code></td><td>价格低点抬高、DIF 走低</td></tr>
+        <tr><td>结构状态</td><td><code>ALREADY_TRIGGERED_DO_NOT_CHASE</code></td><td>触发早已发生，不是今天</td></tr>
+        <tr><td>触发价（23.6%）</td><td>259.05</td><td>收破此价才算做空触发</td></tr>
+        <tr><td>初始止损</td><td>272.20</td><td>锚点高点 + 一跳</td></tr>
+        <tr><td>目标一（38.2%）</td><td>254.34</td><td>—</td></tr>
+        <tr><td>目标二（2/3 自定义）</td><td>241.03</td><td>现价 240.50 <b>已到</b></td></tr>
+        <tr><td>现价</td><td>240.50</td><td>低于触发价 <b>7.2%</b></td></tr>
+      </tbody>
+    </table>
+    <div class="box" style="margin-top:16px">
+      <b>三个理由，任何一个都足以否决：</b><br>
+      1. <b>结构过期。</b>触发发生在 11 月上旬，现价已跑过目标二（241.03）。此时进场等于在目标位开仓。<br>
+      2. <b>A 股不能裸空。</b><code>market_profile.allow_short = false</code>，引擎直接给 <code>WAIT_NO_SHORT_PERMISSION</code>。这条信息的正确用法是<b>"不加仓、不抄底"</b>，不是"做空"。<br>
+      3. <b>它属于 A 类。</b>A 类等的是经营现金流/净利 ≥0.8（四季报），技术面在这里没有话语权——核心仓不由 2 个 ATR 的波动决定去留。
+      <br><br>
+      <b>隐藏空头结构出现在一只 A 类龙头上，是"业绩没跟上价格"的技术投影，不是卖出指令。</b>这句话如果被读成"卖"，整页就白写了。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>9.5 战术执行交接</h2>
+    <p class="lead">战略层说"值不值得买、买多少"，战术层只说"现在这个价位、这个 K 线状态，规则允不允许下手"。</p>
+    <table>
+      <thead><tr><th>要素</th><th>取值</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>战略授权</td><td><code>NO_AUTH</code> ／ <code>NOT_AUTHORIZED</code></td><td>研究层五态机给 <code>NO_AUTH</code>，引擎字段为 <code>NOT_AUTHORIZED</code>；11-16 收盘版维持合计 10.5%、弹性仓 1.5%，未授权任何单票战术额度</td></tr>
+        <tr><td>战术额度</td><td>0%</td><td>未授权即无额度，技术信号不得自建额度</td></tr>
+        <tr><td>信号 / 执行标的</td><td>九只个股 / 未指定</td><td>本期不执行，故不指定执行标的，避免用 ETF 顶替个股信号的口径混淆</td></tr>
+        <tr><td>数据时点 / K 线状态</td><td>2026-11-16 收盘 / <code>closed</code></td><td>午间版必须标 <code>forming</code> 且不得触发</td></tr>
+      </tbody>
+    </table>
+    <pre>python3 scripts/build_leader_snapshot.py \
+  --engine-dir ~/.workbuddy/skills/divergence-trade-signals \
+  --data-dir reports/2026-11-17/data/leaders \
+  --leaders reports/2026-11-17/data/leaders/leaders.json \
+  --output reports/2026-11-17/signals-leaders-close.json \
+  --as-of 2026-11-16</pre>
+    <p class="note">
+      名单与"该等什么"只维护一份 <code>leaders.json</code>，技术判定一律由引擎算，避免双份维护。
+      归档文件 <a href="signals-leaders-close.json"><code>signals-leaders-close.json</code></a> 内含每只的
+      <code>strategy_version</code>、<code>input_sha256</code> 与数据源。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>反证：这套规则在过去一年只开出 5 笔，净 −2.38R</h2>
+    <p class="lead">只报"信号"、不报"信号有多稀疏"的报告是在骗人。保守事件回测：次日开盘入场、止损优先于目标、T+1 最早次日退出、双边 8bp 成本、样本内不做参数优化。</p>
+    <table>
+      <thead><tr><th>标的</th><th>样本</th><th>交易</th><th>胜率</th><th>期望</th><th>累计 R</th></tr></thead>
+      <tbody>
+        <tr><td>汇川技术</td><td>355</td><td>1</td><td>100%</td><td class="pos">+0.07R</td><td class="pos">+0.07</td></tr>
+        <tr><td>阳光电源</td><td>355</td><td>1</td><td>100%</td><td class="pos">+0.63R</td><td class="pos">+0.63</td></tr>
+        <tr><td>新易盛</td><td>355</td><td>2</td><td>0%</td><td class="neg">−1.03R</td><td class="neg">−2.06</td></tr>
+        <tr><td>迈瑞医疗</td><td>355</td><td>1</td><td>0%</td><td class="neg">−1.02R</td><td class="neg">−1.02</td></tr>
+        <tr><td>宁德 / 中际旭创 / 天孚 / 三环 / 温氏</td><td>355 × 5</td><td><b>0</b></td><td class="muted">—</td><td class="muted">—</td><td>0</td></tr>
+        <tr><td><b>合计</b></td><td><b>3,195 根</b></td><td><b>5</b></td><td><b>40%</b></td><td class="neg"><b>−0.48R</b></td><td class="neg"><b>−2.38</b></td></tr>
+      </tbody>
+    </table>
+
+    <table style="margin-top:22px">
+      <thead><tr><th>标的</th><th>信号日</th><th>出场日</th><th>方向</th><th>出场原因</th><th>净收益</th><th>R</th></tr></thead>
+      <tbody>
+        <tr><td>汇川技术</td><td>2026-10-19</td><td>2026-10-21</td><td>多</td><td>目标一</td><td class="pos">+0.33%</td><td class="pos">+0.07</td></tr>
+        <tr><td>阳光电源</td><td>2026-11-02</td><td>2026-11-04</td><td>多</td><td>目标一</td><td class="pos">+8.81%</td><td class="pos">+0.63</td></tr>
+        <tr><td>新易盛</td><td>2026-02-25</td><td>2026-03-02</td><td>多</td><td>止损</td><td class="neg">−8.11%</td><td class="neg">−1.01</td></tr>
+        <tr><td>新易盛</td><td>2026-07-27</td><td>2026-07-29</td><td>多</td><td>止损</td><td class="neg">−1.61%</td><td class="neg">−1.05</td></tr>
+        <tr><td>迈瑞医疗</td><td>2026-01-29</td><td>2026-02-13</td><td>多</td><td>止损</td><td class="neg">−3.49%</td><td class="neg">−1.02</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box" style="margin-top:16px">
+      <b>为什么只有 5 笔——这是规则的结构性缺陷，不是数据问题。</b><br>
+      摆动点需要右侧 3 根 K 线确认。等到结构"可见"，价格在确认窗口里通常已经穿过了 23.6% 触发价。这些 bar 在实盘根本不可操作，引擎把它们标成
+      <code>ALREADY_TRIGGERED_DO_NOT_CHASE</code>（宁德时代在 295 个可判定 bar 上累计判出 <b>56 次</b>）。要出现真正的 <code>TRIGGERED</code>，必须在结构有效的 20 根内<b>先回抽、再二次穿越</b>。
+      <br><br>
+      <b>结论：这套规则不是"高胜率系统"，而是"极低频过滤器"。</b>任何"交易冠军 David 胜率 XX%"的说法，在本样本内不可验证——5 笔连统计显著性都谈不上。
+      两条赢单只赚到 +0.07R 和 +0.63R，是因为目标一（38.2%）离入场太近、而止损给了整整一个锚点高点的距离，<b>盈亏比本身就不对称</b>。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>分歧点：我明确站队的三件事</h2>
+    <div class="say"><b>分歧一：B 类"跌了 45%"算不算便宜？</b>不算。20 日 −45.84% 配 1.25 的量比，是<b>放量出货</b>的形态，不是缩量见底。要看到量比降到 0.8 以下、且出现第二个抬高的低点，才具备"便宜"的技术前提。</div>
+    <div class="say"><b>分歧二：温氏 RSI 73.6 在 0.34% 的箱体里，是突破前兆还是假突破温床？</b>后者概率更高。0.34% 的箱体宽度意味着任何一次正常的日内波动都能制造"突破"，而 RSI 已 73.6，追进去的风险回报比极差。<b>这类形态的正确动作是等箱体自己破，不是猜方向。</b></div>
+    <div class="say"><b>分歧三：C 类（阳光 −2.41%、汇川 +4.27%）跌得最少，是否更安全？</b>恰恰相反。它们的 60 日跌幅仍有 −35.05% / −13.46%，20 日却几乎持平——这是<b>下跌中继的横盘</b>，不是底部。MA20 斜率 +0.18% / +1.90% 只说明短期止跌，与"订单/毛利拐点"这个战略条件毫无关系。</div>
+  </div>
+
+  <div class="card">
+    <h2>口径与缺口</h2>
+    <table>
+      <thead><tr><th>项目</th><th>取值</th></tr></thead>
+      <tbody>
+        <tr><td>数据接口</td><td><code>web.ifzq.gtimg.cn/appstock/app/kline/kline</code></td></tr>
+        <tr><td>复权方式</td><td><b>不复权</b>，除权除息会留缺口；只用于结构判定，不用于收益归因</td></tr>
+        <tr><td>每只样本</td><td>355 根日线，2025-06-03 至 2026-11-16</td></tr>
+        <tr><td>抓取时点</td><td>2026-11-17T01:35:23Z</td></tr>
+        <tr><td>引擎版本</td><td><code>strategy_version 0.2.0</code> / <code>schema_version 1.0</code></td></tr>
+        <tr><td>名单哈希</td><td><code>leaders.json</code> SHA256 前 16 位 <code>8813792029b53bd4</code></td></tr>
+        <tr><td>目标口径</td><td><b>当前周期回退</b>（未提供高周期 CSV）</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      <b>数据源降级说明（必须写明）：</b>WeStock CLI 在本机因 TLS 证书链校验失败（<code>x509: "proxy.finance.qq.com" certificate is not standards compliant</code>）不可用；
+      <code>setup.sh</code> 升级因 <b>SHA256 清单校验不通过被拒绝执行</b>，未绕过校验。最终改用腾讯公开接口取数，并在此标注。<b>没有一根 K 线来自模型记忆。</b>
+      <br><br>
+      <b>未闭合的口径缺口：</b>① 未提供周线/月线 CSV，目标位用当前周期回退，38.2% 与 2/3 目标的可信度低于有高周期时；
+      ② 价格为不复权，除权日附近存在缺口；③ 回测样本仅 355 根/只、5 笔交易，不构成任何频率或胜率结论。
+    </p>
+  </div>
+
+  <footer>
+    本页是研究方法与写作工具的产物，<b>不构成任何投资建议</b>。技术状态基于公开、不复权数据的规则化计算，可能存在数据延迟或口径差异；情景概率与仓位档位属主观设计。投资有风险，决策请自行承担。
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "source": "Tencent public ifzq daily K-line endpoint (unadjusted)",
+  "endpoint": "https://web.ifzq.gtimg.cn/appstock/app/kline/kline",
+  "fetched_at": "2026-11-17T01:35:23.139004+00:00",
+  "requested_start": "2025-06-01",
+  "requested_end": "2026-11-17",
+  "as_of": "2026-11-16",
+  "adjustment": "none",
+  "caveat": "Unadjusted prices may contain ex-dividend or split gaps.",
+  "symbols": {
+    "sz300750": {
+      "file": "sz300750.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 240.5,
+      "sha256": "d66099c508a61e4e374d6191617f33c937387d43c6b78dfb0f7f1f11da637064"
+    },
+    "sz300760": {
+      "file": "sz300760.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 184.3,
+      "sha256": "08686ebec2ac6143e70220187aa45b193bbe80bde601c8a0722ebe1835f18ac4"
+    },
+    "sz300498": {
+      "file": "sz300498.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 17.55,
+      "sha256": "768b496f2f3ea4113e648446d91956553931b3c1ec2cd3135ebd55ef792110be"
+    },
+    "sz300308": {
+      "file": "sz300308.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 408.97,
+      "sha256": "6bc9b1065cabcdcc7a4baad3d8651fa2621079b52592f8ff3b24ac1035e33c14"
+    },
+    "sz300502": {
+      "file": "sz300502.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 166.8,
+      "sha256": "4d696c9c6bc13bb500d743a89ea883c9ad1061a68c7394343e2903f085854b05"
+    },
+    "sz300394": {
+      "file": "sz300394.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 110.2,
+      "sha256": "2f53d0a9cc182e938a2d3134c4de52def494b147cf1375ddc278de1b50948d2f"
+    },
+    "sz300408": {
+      "file": "sz300408.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 64.39,
+      "sha256": "5c98d72733a09766ff2be7b197ab4adbf43616b8417dc173fddb8579a55e399f"
+    },
+    "sz300274": {
+      "file": "sz300274.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 75.81,
+      "sha256": "ded92e85ecbd80ccf409a97131b3168629570dc818e57c4519440cb58950457f"
+    },
+    "sz300124": {
+      "file": "sz300124.csv",
+      "rows": 355,
+      "first": "2025-06-03",
+      "last": "2026-11-16",
+      "last_close": 52.96,
+      "sha256": "b8e14fb36d89f925639a920ecbeceb5f73f23e72ab26348026f741ea528d6121"
+    }
+  }
+}
