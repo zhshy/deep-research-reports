@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自选股背离信号 · 2026-11-25 收盘</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f6f8; color: #1f2937;
+       font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+       line-height: 1.65; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+header { background: #0f172a; color: #f8fafc; padding: 34px 0 26px; }
+header h1 { font-size: 23px; font-weight: 600; margin: 0 0 8px; }
+header .meta { color: #94a3b8; font-size: 13px; }
+header .meta b { color: #e2e8f0; font-weight: 500; }
+section { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+          padding: 20px 22px; margin: 16px 0; }
+h2 { font-size: 15px; font-weight: 600; margin: 0 0 12px; color: #0f172a; }
+.headline { font-size: 16px; font-weight: 600; color: #b91c1c; margin: 0 0 14px; }
+.headline.neutral { color: #1e3a8a; }
+.cards { display: flex; flex-wrap: wrap; gap: 10px; }
+.card { flex: 1 1 130px; background: #f8fafc; border: 1px solid #e5e7eb;
+        border-radius: 10px; padding: 10px 14px; }
+.card .k { font-size: 12px; color: #64748b; }
+.card .v { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 8px 6px; text-align: right; border-bottom: 1px solid #eef2f7;
+         font-variant-numeric: tabular-nums; white-space: nowrap; }
+th { color: #64748b; font-weight: 500; background: #fbfcfe; }
+th:nth-child(-n+2), td:nth-child(-n+2) { text-align: left; }
+th:nth-last-child(-n+2), td:nth-last-child(-n+2) { text-align: right; }
+.scroll { overflow-x: auto; }
+.tag { font-size: 11px; padding: 1px 8px; border-radius: 20px; background: #eef2ff; color: #3730a3; }
+.tag.wait { background: #f1f5f9; color: #475569; }
+.tag.expired { background: #f8fafc; color: #94a3b8; }
+.tag.none { background: #f1f5f9; color: #94a3b8; }
+.tag.hot { background: #fef2f2; color: #b91c1c; }
+.pos { color: #b91c1c; }
+.neg { color: #15803d; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.note { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; }
+.note h3 { font-size: 14px; margin: 0 0 6px; }
+.note ul { margin: 0; padding-left: 16px; font-size: 12.5px; color: #334155; }
+.note li { margin: 3px 0; }
+ol.rules { margin: 0; padding-left: 20px; font-size: 13px; color: #334155; }
+ul.limits { margin: 0; padding-left: 18px; font-size: 12.5px; color: #64748b; }
+footer { color: #64748b; font-size: 12px; padding: 6px 0 40px; }
+a { color: #3730a3; text-decoration: none; }
+@media (max-width: 640px) { header h1 { font-size: 19px; } section { padding: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>自选股背离信号 · 2026-11-25 收盘</h1>
+    <div class="meta">
+      期次 <b>close</b> ｜ 生成 <b>2026-11-25T15:10:31+08:00</b> ｜
+      引擎 <b>v0.2.0</b> ｜ 当日 K 线已收盘<br>
+      数据：腾讯日线（不复权）｜ 名单 <b>config/watchlist.json</b>
+      （11 只参与计算，1 只仅作背景）
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="headline neutral">3 只接近触发，但还没越过触发价，今天不动</div>
+    <div class="cards"><div class="card"><div class="k">参与计算</div><div class="v">11 只</div></div><div class="card"><div class="k">已触发</div><div class="v">0 只</div></div><div class="card"><div class="k">等待触发</div><div class="v">3 只</div></div><div class="card"><div class="k">过期不追</div><div class="v">3 只</div></div><div class="card"><div class="k">无结构</div><div class="v">5 只</div></div><div class="card"><div class="k">战略授权</div><div class="v">NOT_AUTHORIZED</div></div></div>
+  </section>
+
+  <section>
+    <h2>明细</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr>
+          <th>代码</th><th>名称</th><th>最新</th><th>5日</th><th>RSI14</th><th>量能 5/20</th>
+          <th>规则动作</th><th>状态</th><th>触发</th><th>止损</th><th>目标1</th>
+        </tr></thead>
+        <tbody><tr><td>sz002938</td><td>鹏鼎控股</td><td>46.20</td><td class="pos">+1.92%</td><td>35.7</td><td>0.91</td><td>WAIT_DO_NOT_CHASE</td><td><span class="tag expired">过期不追</span></td><td>45.04</td><td>41.79</td><td>47.05</td></tr><tr><td>sh600487</td><td>亨通光电</td><td>34.20</td><td class="neg">-11.38%</td><td>30.8</td><td>0.80</td><td>WATCH_LONG</td><td><span class="tag wait">等待触发</span></td><td>38.68</td><td>34.19</td><td>44.30</td></tr><tr><td>sz002428</td><td>云南锗业</td><td>62.10</td><td class="neg">-11.91%</td><td>36.4</td><td>0.77</td><td>WAIT_DO_NOT_CHASE</td><td><span class="tag expired">过期不追</span></td><td>78.51</td><td>80.85</td><td>74.41</td></tr><tr><td>sh603993</td><td>洛阳钼业</td><td>11.60</td><td class="neg">-4.37%</td><td>27.1</td><td>1.11</td><td>WATCH_LONG</td><td><span class="tag wait">等待触发</span></td><td>11.99</td><td>11.25</td><td>12.45</td></tr><tr><td>sh588000</td><td>科创50ETF华夏</td><td>1.25</td><td class="neg">-5.14%</td><td>38.0</td><td>0.88</td><td>WAIT</td><td><span class="tag none">无结构</span></td><td>—</td><td>—</td><td>—</td></tr><tr><td>sz159246</td><td>创业板人工智能ETF富国</td><td>0.71</td><td class="neg">-4.72%</td><td>34.4</td><td>1.01</td><td>WAIT</td><td><span class="tag none">无结构</span></td><td>—</td><td>—</td><td>—</td></tr><tr><td>sh600030</td><td>中信证券</td><td>24.80</td><td class="neg">-1.00%</td><td>39.4</td><td>0.95</td><td>WAIT_DO_NOT_CHASE</td><td><span class="tag expired">过期不追</span></td><td>25.31</td><td>25.48</td><td>25.21</td></tr><tr><td>sz002815</td><td>崇达技术</td><td>13.87</td><td class="pos">+1.46%</td><td>39.2</td><td>1.34</td><td>WATCH_LONG</td><td><span class="tag wait">等待触发</span></td><td>13.96</td><td>12.99</td><td>14.55</td></tr><tr><td>sz000823</td><td>超声电子</td><td>19.32</td><td class="pos">+9.46%</td><td>51.9</td><td>1.15</td><td>WAIT</td><td><span class="tag none">无结构</span></td><td>—</td><td>—</td><td>—</td></tr><tr><td>sz000657</td><td>中钨高新</td><td>32.20</td><td class="neg">-9.32%</td><td>31.7</td><td>0.82</td><td>WAIT</td><td><span class="tag none">无结构</span></td><td>—</td><td>—</td><td>—</td></tr><tr><td>sz002971</td><td>和远气体</td><td>28.12</td><td class="neg">-16.53%</td><td>32.6</td><td>0.87</td><td>WAIT</td><td><span class="tag none">无结构</span></td><td>—</td><td>—</td><td>—</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>逐只要点</h2>
+    <div class="notes"><div class="note"><h3>鹏鼎控股 <span style="color:#94a3b8;font-weight:400">sz002938</span> <span class="tag expired">过期不追</span></h3><ul><li>WAIT_DO_NOT_CHASE ｜ 形态 regular_bullish ｜ 方向 long</li><li>触发 45.04 ｜ 失效 41.79 ｜ 目标 47.05, 50.96</li><li>RSI14 35.7 ｜ 量能比 0.91 ｜ 支撑 45.28 ｜ 压力 49.17</li><li>无拦截项</li><li>PCB</li></ul></div><div class="note"><h3>亨通光电 <span style="color:#94a3b8;font-weight:400">sh600487</span> <span class="tag wait">等待触发</span></h3><ul><li>WATCH_LONG ｜ 形态 regular_bullish ｜ 方向 long</li><li>触发 38.68 ｜ 失效 34.19 ｜ 目标 44.30, 48.38</li><li>RSI14 30.8 ｜ 量能比 0.80 ｜ 支撑 34.17 ｜ 压力 43.55</li><li>无拦截项</li><li>光通信/海缆</li></ul></div><div class="note"><h3>云南锗业 <span style="color:#94a3b8;font-weight:400">sz002428</span> <span class="tag expired">过期不追</span></h3><ul><li>WAIT_DO_NOT_CHASE ｜ 形态 hidden_bearish ｜ 方向 short</li><li>触发 78.51 ｜ 失效 80.85 ｜ 目标 74.41, 69.61</li><li>RSI14 36.4 ｜ 量能比 0.77 ｜ 支撑 60.83 ｜ 压力 80.84</li><li>无拦截项</li><li>锗/小金属</li></ul></div><div class="note"><h3>洛阳钼业 <span style="color:#94a3b8;font-weight:400">sh603993</span> <span class="tag wait">等待触发</span></h3><ul><li>WATCH_LONG ｜ 形态 regular_bullish ｜ 方向 long</li><li>触发 11.99 ｜ 失效 11.25 ｜ 目标 12.45, 13.33</li><li>RSI14 27.1 ｜ 量能比 1.11 ｜ 支撑 11.26 ｜ 压力 13.73</li><li>无拦截项</li><li>铜钴</li></ul></div><div class="note"><h3>科创50ETF华夏 <span style="color:#94a3b8;font-weight:400">sh588000</span> <span class="tag none">无结构</span></h3><ul><li>WAIT ｜ 形态 无形态 ｜ 方向 —</li><li>触发 — ｜ 失效 — ｜ 目标 —</li><li>RSI14 38.0 ｜ 量能比 0.88 ｜ 支撑 1.20 ｜ 压力 1.41</li><li>无拦截项</li><li>科创板宽基</li></ul></div><div class="note"><h3>创业板人工智能ETF富国 <span style="color:#94a3b8;font-weight:400">sz159246</span> <span class="tag none">无结构</span></h3><ul><li>WAIT ｜ 形态 无形态 ｜ 方向 —</li><li>触发 — ｜ 失效 — ｜ 目标 —</li><li>RSI14 34.4 ｜ 量能比 1.01 ｜ 支撑 — ｜ 压力 0.84</li><li>无拦截项</li><li>AI 主题</li></ul></div><div class="note"><h3>中信证券 <span style="color:#94a3b8;font-weight:400">sh600030</span> <span class="tag expired">过期不追</span></h3><ul><li>WAIT_DO_NOT_CHASE ｜ 形态 hidden_bearish ｜ 方向 short</li><li>触发 25.31 ｜ 失效 25.48 ｜ 目标 25.21, 25.02</li><li>RSI14 39.4 ｜ 量能比 0.95 ｜ 支撑 24.77 ｜ 压力 25.33</li><li>无拦截项</li><li>券商</li></ul></div><div class="note"><h3>崇达技术 <span style="color:#94a3b8;font-weight:400">sz002815</span> <span class="tag wait">等待触发</span></h3><ul><li>WATCH_LONG ｜ 形态 regular_bullish ｜ 方向 long</li><li>触发 13.96 ｜ 失效 12.99 ｜ 目标 14.55, 15.71</li><li>RSI14 39.2 ｜ 量能比 1.34 ｜ 支撑 13.74 ｜ 压力 14.20</li><li>无拦截项</li><li>PCB</li></ul></div><div class="note"><h3>超声电子 <span style="color:#94a3b8;font-weight:400">sz000823</span> <span class="tag none">无结构</span></h3><ul><li>WAIT ｜ 形态 无形态 ｜ 方向 —</li><li>触发 — ｜ 失效 — ｜ 目标 —</li><li>RSI14 51.9 ｜ 量能比 1.15 ｜ 支撑 16.29 ｜ 压力 19.75</li><li>无拦截项</li><li>PCB/覆铜板</li></ul></div><div class="note"><h3>中钨高新 <span style="color:#94a3b8;font-weight:400">sz000657</span> <span class="tag none">无结构</span></h3><ul><li>WAIT ｜ 形态 无形态 ｜ 方向 —</li><li>触发 — ｜ 失效 — ｜ 目标 —</li><li>RSI14 31.7 ｜ 量能比 0.82 ｜ 支撑 27.57 ｜ 压力 43.16</li><li>无拦截项</li><li>钨</li></ul></div><div class="note"><h3>和远气体 <span style="color:#94a3b8;font-weight:400">sz002971</span> <span class="tag none">无结构</span></h3><ul><li>WAIT ｜ 形态 无形态 ｜ 方向 —</li><li>触发 — ｜ 失效 — ｜ 目标 —</li><li>RSI14 32.6 ｜ 量能比 0.87 ｜ 支撑 27.20 ｜ 压力 29.68</li><li>无拦截项</li><li>工业气体</li></ul></div></div>
+  </section>
+
+  <section><h2>仅作背景（不参与信号）</h2><ul class="limits"><li><b>光纤概念 886084</b>：同花顺概念指数，腾讯日线接口无该代码，仅作板块情绪参考，不产生技术信号</li></ul></section>
+
+  <section>
+    <h2>执行闸门</h2>
+    <p style="font-size:13px;color:#334155;margin:0 0 10px">
+      技术触发不等于执行许可，以下任一条不满足，规则层都会拒绝下单：
+    </p>
+    <ol class="rules">
+      <li>K 线必须已收盘（closed），盘中 forming 只能预演；</li>
+      <li>A 股不能裸卖空，做空信号只在有券可借时有意义；</li>
+      <li>位置未确认（无战略价位）时，突破信号降级为等待；</li>
+      <li>核心仓不使用战术入场；</li>
+      <li>无战略授权时，任何触发都只输出 NO_AUTH。</li>
+    </ol>
+    <p style="font-size:13px;color:#b91c1c;margin:12px 0 0">
+      本报告默认不授予战略授权：它是观察清单，不是下单指令。
+    </p>
+  </section>
+
+  <section>
+    <h2>数据与限制</h2>
+    <ul class="limits"><li>技术状态不构成战略授权或下单指令。</li><li>A 股 T+1，且裸卖空不可行。</li><li>未提供更高周期数据，目标价为当前周期回退值。</li><li>无结构不等于预测价格不动。</li></ul>
+  </section>
+
+  <footer>
+    由 <a href="https://github.com/zhshy/divergence-trade-signals">divergence-trade-signals</a>
+    生成 · 不构成任何投资建议
+  </footer>
+</div>
+</body>
+</html>

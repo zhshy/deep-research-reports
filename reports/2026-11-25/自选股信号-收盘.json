@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-25T15:10:31+08:00",
+  "session": "close",
+  "as_of": "2026-11-25",
+  "engine_version": "0.2.0",
+  "bar_status": "closed",
+  "timeframe": "day",
+  "data_source": "Tencent public ifzq daily K-line endpoint (unadjusted)",
+  "data_caveat": "Unadjusted prices may contain ex-dividend or split gaps.",
+  "watchlist": {
+    "file": "config/watchlist.json",
+    "sha256": "4d99404062e9ea3c854b1227587913a79a18cd10dfdb274f7745d55dfef7b118",
+    "source": "同花顺自选股截图 2026-11-17 10:40"
+  },
+  "summary": {
+    "total": 11,
+    "triggered": 0,
+    "waiting": 3,
+    "expired": 3,
+    "no_setup": 5,
+    "fresh": 11,
+    "stale_total": 11,
+    "authorized": false,
+    "headline": "3 只接近触发，但还没越过触发价，今天不动"
+  },
+  "items": [
+    {
+      "code": "sz002938",
+      "name": "鹏鼎控股",
+      "market": "cn_a_stock",
+      "note": "PCB",
+      "as_of": "2026-11-25",
+      "last_close": 46.2,
+      "action": "WAIT_DO_NOT_CHASE",
+      "setup_type": "regular_bullish",
+      "setup_direction": "long",
+      "setup_state": "ALREADY_TRIGGERED_DO_NOT_CHASE",
+      "state_label": "过期不追",
+      "entry_trigger": 45.04264,
+      "initial_stop": 41.79,
+      "targets": [
+        47.04868,
+        50.96
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 35.66215305,
+      "volume_ratio": 0.91,
+      "returns_pct": {
+        "5d": 1.92,
+        "20d": -32.07,
+        "60d": -47.16
+      },
+      "support": 45.28,
+      "resistance": 49.17,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "5c274d3471c5c6c2fd7a0a2ff6ba068f3f3e39659891deb2b763fe55f1d80a95",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sh600487",
+      "name": "亨通光电",
+      "market": "cn_a_stock",
+      "note": "光通信/海缆",
+      "as_of": "2026-11-25",
+      "last_close": 34.2,
+      "action": "WATCH_LONG",
+      "setup_type": "regular_bullish",
+      "setup_direction": "long",
+      "setup_state": "WAITING",
+      "state_label": "等待触发",
+      "entry_trigger": 38.67692,
+      "initial_stop": 34.19,
+      "targets": [
+        44.29552,
+        48.38333333
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 30.79308307,
+      "volume_ratio": 0.8,
+      "returns_pct": {
+        "5d": -11.38,
+        "20d": -29.44,
+        "60d": -47.06
+      },
+      "support": 34.17,
+      "resistance": 43.55,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "A post-divergence new extreme was found; Fibonacci levels were re-anchored as required.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "b1f28c490357a914cdc82568cd7e02b943c25623081055d53722e93eef39470c",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz002428",
+      "name": "云南锗业",
+      "market": "cn_a_stock",
+      "note": "锗/小金属",
+      "as_of": "2026-11-25",
+      "last_close": 62.1,
+      "action": "WAIT_DO_NOT_CHASE",
+      "setup_type": "hidden_bearish",
+      "setup_direction": "short",
+      "setup_state": "ALREADY_TRIGGERED_DO_NOT_CHASE",
+      "state_label": "过期不追",
+      "entry_trigger": 78.50832,
+      "initial_stop": 80.85,
+      "targets": [
+        74.40712,
+        69.61333333
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 36.37915175,
+      "volume_ratio": 0.77,
+      "returns_pct": {
+        "5d": -11.91,
+        "20d": -16.81,
+        "60d": -34.1
+      },
+      "support": 60.83,
+      "resistance": 80.84,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "d6bec94e432d6245b44895e74593e7a8c48d1eb33d3603940ec2135b478803d8",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sh603993",
+      "name": "洛阳钼业",
+      "market": "cn_a_stock",
+      "note": "铜钴",
+      "as_of": "2026-11-25",
+      "last_close": 11.6,
+      "action": "WATCH_LONG",
+      "setup_type": "regular_bullish",
+      "setup_direction": "long",
+      "setup_state": "WAITING",
+      "state_label": "等待触发",
+      "entry_trigger": 11.99396,
+      "initial_stop": 11.25,
+      "targets": [
+        12.44802,
+        13.33333333
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 27.05438704,
+      "volume_ratio": 1.11,
+      "returns_pct": {
+        "5d": -4.37,
+        "20d": -17.5,
+        "60d": -37.02
+      },
+      "support": 11.26,
+      "resistance": 13.73,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "8a206fcb05a9cffdceb5aeac636c13cec29e8896af5e5a9adeeb758e389b0ad7",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "market": "cn_a_etf",
+      "note": "科创板宽基",
+      "as_of": "2026-11-25",
+      "last_close": 1.254,
+      "action": "WAIT",
+      "setup_type": null,
+      "setup_direction": null,
+      "setup_state": null,
+      "state_label": "无结构",
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": [],
+      "targets_basis": null,
+      "rsi14": 38.02376072,
+      "volume_ratio": 0.88,
+      "returns_pct": {
+        "5d": -5.14,
+        "20d": -7.39,
+        "60d": -25.93
+      },
+      "support": 1.197,
+      "resistance": 1.405,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "0ce31600fa7ab99d364be9feb59be0e8431a68f60240432f817f45d4529497ce",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz159246",
+      "name": "创业板人工智能ETF富国",
+      "market": "cn_a_etf",
+      "note": "AI 主题",
+      "as_of": "2026-11-25",
+      "last_close": 0.707,
+      "action": "WAIT",
+      "setup_type": null,
+      "setup_direction": null,
+      "setup_state": null,
+      "state_label": "无结构",
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": [],
+      "targets_basis": null,
+      "rsi14": 34.4404828,
+      "volume_ratio": 1.01,
+      "returns_pct": {
+        "5d": -4.72,
+        "20d": -24.14,
+        "60d": -37.04
+      },
+      "support": null,
+      "resistance": 0.844,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "776652b4c5ef4e5bd1ff4ebb09e96e711a70ec828d670f33c04d922b132431b6",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sh600030",
+      "name": "中信证券",
+      "market": "cn_a_stock",
+      "note": "券商",
+      "as_of": "2026-11-25",
+      "last_close": 24.8,
+      "action": "WAIT_DO_NOT_CHASE",
+      "setup_type": "hidden_bearish",
+      "setup_direction": "short",
+      "setup_state": "ALREADY_TRIGGERED_DO_NOT_CHASE",
+      "state_label": "过期不追",
+      "entry_trigger": 25.31188,
+      "initial_stop": 25.48,
+      "targets": [
+        25.21406,
+        25.02333333
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 39.4001752,
+      "volume_ratio": 0.95,
+      "returns_pct": {
+        "5d": -1.0,
+        "20d": -0.24,
+        "60d": -8.66
+      },
+      "support": 24.77,
+      "resistance": 25.33,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "bbd597687225ece2335c7b8b388e557bd00e7f508f7d53c86b01ba84d892abf1",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz002815",
+      "name": "崇达技术",
+      "market": "cn_a_stock",
+      "note": "PCB",
+      "as_of": "2026-11-25",
+      "last_close": 13.87,
+      "action": "WATCH_LONG",
+      "setup_type": "regular_bullish",
+      "setup_direction": "long",
+      "setup_state": "WAITING",
+      "state_label": "等待触发",
+      "entry_trigger": 13.95816,
+      "initial_stop": 12.99,
+      "targets": [
+        14.55092,
+        15.70666667
+      ],
+      "targets_basis": "current_timeframe_fallback",
+      "rsi14": 39.17253413,
+      "volume_ratio": 1.34,
+      "returns_pct": {
+        "5d": 1.46,
+        "20d": -19.78,
+        "60d": 3.2
+      },
+      "support": 13.74,
+      "resistance": 14.2,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "3cd141eee15e6b96f250f55bfeb961c7dd64836876d39e80f587400e20ece1fd",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz000823",
+      "name": "超声电子",
+      "market": "cn_a_stock",
+      "note": "PCB/覆铜板",
+      "as_of": "2026-11-25",
+      "last_close": 19.32,
+      "action": "WAIT",
+      "setup_type": null,
+      "setup_direction": null,
+      "setup_state": null,
+      "state_label": "无结构",
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": [],
+      "targets_basis": null,
+      "rsi14": 51.94690429,
+      "volume_ratio": 1.15,
+      "returns_pct": {
+        "5d": 9.46,
+        "20d": 6.21,
+        "60d": 30.01
+      },
+      "support": 16.29,
+      "resistance": 19.75,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "1acb44917e88284459fe698b8d796aa4b9843575b436e2c7d125bd7bc8639030",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz000657",
+      "name": "中钨高新",
+      "market": "cn_a_stock",
+      "note": "钨",
+      "as_of": "2026-11-25",
+      "last_close": 32.2,
+      "action": "WAIT",
+      "setup_type": null,
+      "setup_direction": null,
+      "setup_state": null,
+      "state_label": "无结构",
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": [],
+      "targets_basis": null,
+      "rsi14": 31.67802777,
+      "volume_ratio": 0.82,
+      "returns_pct": {
+        "5d": -9.32,
+        "20d": -18.87,
+        "60d": -49.54
+      },
+      "support": 27.57,
+      "resistance": 43.16,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "caaa6117d6235974ab15556eef4fda7fe61ecc7df24bd068bc24f3a1853e6720",
+      "strategy_version": "0.2.0"
+    },
+    {
+      "code": "sz002971",
+      "name": "和远气体",
+      "market": "cn_a_stock",
+      "note": "工业气体",
+      "as_of": "2026-11-25",
+      "last_close": 28.12,
+      "action": "WAIT",
+      "setup_type": null,
+      "setup_direction": null,
+      "setup_state": null,
+      "state_label": "无结构",
+      "entry_trigger": null,
+      "initial_stop": null,
+      "targets": [],
+      "targets_basis": null,
+      "rsi14": 32.64326051,
+      "volume_ratio": 0.87,
+      "returns_pct": {
+        "5d": -16.53,
+        "20d": -17.05,
+        "60d": -34.33
+      },
+      "support": 27.2,
+      "resistance": 29.68,
+      "execution_blockers": [],
+      "strategic_authorization": "NOT_AUTHORIZED",
+      "warnings": [
+        "Signals are rule outputs, not guaranteed predictions; divergence can persist in a strong trend.",
+        "MACD and RSI are correlated price-derived confirmations, not independent evidence.",
+        "Check the listed higher-timeframe support/resistance before treating a setup as location-confirmed.",
+        "No higher-timeframe CSV supplied; targets use a clearly marked current-timeframe fallback.",
+        "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only."
+      ],
+      "input_sha256": "58694ff0e28b516e3f594e837d50f1f56531aeca886a7a190e8b1412b8f454bb",
+      "strategy_version": "0.2.0"
+    }
+  ],
+  "context_items": [
+    {
+      "code": "886084",
+      "name": "光纤概念",
+      "market": null,
+      "role": "context",
+      "note": "同花顺概念指数，腾讯日线接口无该代码，仅作板块情绪参考，不产生技术信号"
+    }
+  ],
+  "limitations": [
+    "技术状态不构成战略授权或下单指令。",
+    "A 股 T+1，且裸卖空不可行。",
+    "未提供更高周期数据，目标价为当前周期回退值。",
+    "无结构不等于预测价格不动。"
+  ]
+}
